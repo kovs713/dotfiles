@@ -1,0 +1,73 @@
+[
+  {
+    "clock": {
+      "format": "{:%d.%m.%Y - %H:%M}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/weather": {
+      "class": "weather",
+      "exec": "curl -s 'wttr.in/Астрахань?format=%c%t'",
+      "format": " {} ",
+      "interval": 300
+    },
+    "height": 30,
+    "hyprland/language": {
+      "format-en": "en",
+      "format-ru": "RU",
+      "tooltip": false
+    },
+    "hyprland/window": {
+      "format": "{title}"
+    },
+    "hyprland/workspaces": {
+      "active-only": false,
+      "all-outputs": true,
+      "disable-scroll": false,
+      "format": "{id}",
+      "on-click": "activate"
+    },
+    "layer": "top",
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "custom/weather",
+      "hyprland/language",
+      "clock",
+      "tray"
+    ],
+    "network": {
+      "format-alt": "{ifname}: {ipaddr}/{cidr}",
+      "format-disconnected": "Disconnected",
+      "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+      "format-linked": "{ifname} (No IP)",
+      "format-wifi": "{essid}"
+    },
+    "position": "top",
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-icons": {
+        "car": "",
+        "default": [
+          "",
+          "",
+          ""
+        ],
+        "hands-free": "",
+        "headphone": "",
+        "headset": "",
+        "phone": "",
+        "portable": ""
+      },
+      "format-muted": " Muted",
+      "on-click": "pavucontrol"
+    },
+    "tray": {
+      "show-passive-items": true,
+      "spacing": 10
+    }
+  }
+]

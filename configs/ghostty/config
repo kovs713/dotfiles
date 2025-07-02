@@ -1,0 +1,7 @@
+theme=GruvboxDarkHard
+background-opacity=0
+clipboard-paste-protection=false
+confirm-close-surface=false
+shell-integration=fish
+font-family=JetBrainsMono Nerd Font
+font-size=20

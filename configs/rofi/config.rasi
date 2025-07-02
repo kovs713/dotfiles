@@ -1,0 +1,18 @@
+configuration {
+cycle: false;
+disable-history: true;
+display-Network: " Network";
+display-drun: " Apps ";
+drun-display-format: "{icon} {name}";
+font: "Iosevka 12";
+hide-scrollbar: true;
+lines: 5;
+location: 0;
+modi: "drun";
+show-icons: true;
+sorting-method: "fzf";
+terminal: "kitty";
+xoffset: 0;
+yoffset: 0;
+}
+@theme "theme"
