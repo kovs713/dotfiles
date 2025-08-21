@@ -1,7 +1,7 @@
 [
   {
     "clock": {
-      "format": "{:%d.%m.%Y - %H:%M}",
+      "format": "{:%d.%m - %H:%M}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "custom/weather": {
@@ -17,7 +17,7 @@
       "tooltip": false
     },
     "hyprland/window": {
-      "format": "{title}"
+      "format": "{initialClass}"
     },
     "hyprland/workspaces": {
       "active-only": false,
@@ -28,15 +28,15 @@
     },
     "layer": "top",
     "modules-center": [
-      "hyprland/window"
+      "clock"
     ],
     "modules-left": [
-      "hyprland/workspaces"
+      "hyprland/workspaces",
+      "hyprland/window"
     ],
     "modules-right": [
       "custom/weather",
       "hyprland/language",
-      "clock",
       "tray"
     ],
     "network": {

@@ -1,14 +1,15 @@
 * {
-    bg0: #282828;
-    bg1: #32302f;
-    grey0: #7c6f64;
-    fg0: #d4be98;
+    bg0: #191724;
+    bg1: #1f1d2e;
+    grey0: #6e6a86;
+    fg0: #e0def4;
 
-    blue: #7daea3;
-    red: #ea6962;
-    orange: #e78a4e;
-    green: #a9b665;
-    bgStatusline3: #504945;
+    blue: #9ccfd8;
+    red: #eb6f92;
+    orange: #f6c177;
+    green: #31748f;
+    purple: #c4a7e7;
+    bgStatusline3: #ebbcba;
 
     background-color: @bg0;
 }
@@ -106,3 +107,4 @@ element-text, element-icon {
 element-text .active, element-text .urgent {
     text-color: @bg0;
 }
+

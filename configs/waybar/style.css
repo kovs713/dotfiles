@@ -1,11 +1,3 @@
-/* #9d0006 */
-/* #b94306 */
-/* #e3a526 */
-/* #85a03b */
-/* #277680 */
-/* #8f4373 */
-/* #d3869b */
-
 * {
   border: none;
   border-radius: 0px;
@@ -17,25 +9,25 @@
 }
 
 window#waybar {
-  background-color: #282828;
-  border-bottom: 5px solid #d5c4a1;
+  background-color: #191724; /* BG */
+  border-bottom: 5px solid #e0def4; /* FG */
 }
 
 #workspaces button {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
-  color: #b8bb26;
-  border-bottom: 7px solid #b8bb26;
+  color: #9ccfd8; /* GREEN */
+  border-bottom: 7px solid #9ccfd8; /* GREEN */
 }
 
 #workspaces button.active {
-  color: #282828;
-  background-color: #b8bb26;
+  color: #191724; /* BG */
+  background-color: #9ccfd8; /* GREEN */
 }
 
 #workspaces button:hover {
-  color: #282828;
-  background-color: #b8bb26;
+  color: #191724; /* BG */
+  background-color: #9ccfd8; /* GREEN */
 }
 
 #window,
@@ -52,36 +44,37 @@ window#waybar {
 }
 
 #window {
-  color: #d3869b;
-  border-bottom: 7px solid #d3869b;
+  color: #ebbcba; /* PURPLE */
+  border-bottom: 7px solid #ebbcba;
 }
 
 #network {
-  color: #9d0006;
-  border-bottom: 7px solid #9d0006;
+  color: #eb6f92; /* RED */
+  border-bottom: 7px solid #eb6f92;
 }
 
 #battery {
-  color: #b94306;
-  border-bottom: 7px solid #b94306;
+  color: #f6c177; /* ORANGE */
+  border-bottom: 7px solid #f6c177;
 }
 
 #custom-weather {
-  color: #e3a526;
-  border-bottom: 7px solid #e3a526;
+  color: #9ccfd8; /* GREEN */
+  border-bottom: 7px solid #9ccfd8;
 }
 
 #language {
-  color: #85a03b;
-  border-bottom: 7px solid #85a03b;
+  color: #9ccfd8; /* GREEN */
+  border-bottom: 7px solid #9ccfd8;
 }
 
 #clock {
-  color: #277680;
-  border-bottom: 7px solid #277680;
+  color: #9ccfd8; /* GREEN */
+  border-bottom: 7px solid #9ccfd8;
 }
 
 #tray {
-  color: #8f4373;
-  border-bottom: 7px solid #8f4373;
+  color: #ebbcba; /* PURPLE */
+  border-bottom: 7px solid #ebbcba;
 }
+

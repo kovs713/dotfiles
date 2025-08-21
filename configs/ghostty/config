@@ -1,5 +1,5 @@
-theme=GruvboxLight
-background-opacity=0.7
+theme=rose-pine
+background-opacity=0.8
 clipboard-paste-protection=false
 confirm-close-surface=false
 shell-integration=fish
