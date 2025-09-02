@@ -432,6 +432,7 @@ linux-firmware-other
 linux-firmware-radeon
 linux-firmware-realtek
 linux-firmware-whence
+linux-headers
 llvm-libs
 lm_sensors
 lmdb
@@ -469,7 +470,6 @@ mpg123
 msgpack-c
 mtdev
 ncurses
-nekoray-bin
 neovim
 nettle
 networkmanager
@@ -506,6 +506,7 @@ ostree
 p11-kit
 pacman
 pacman-mirrorlist
+pahole
 pam
 pambase
 pango
@@ -642,7 +643,6 @@ tar
 tdb
 texinfo
 texlab
-throne-bin
 tinysparql
 tmux
 tomlplusplus
@@ -694,6 +694,7 @@ vde2
 vencord-bin
 vesktop
 vid.stab
+virtualbox-host-modules-arch
 visual-studio-code-insiders-bin
 vmaf
 vulkan-icd-loader
