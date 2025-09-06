@@ -1,12 +1,11 @@
 {
-	// === общие вещи из твоего vimrc ===
+	// vimrc
 	"vim.leader": "<space>",
 	"vim.useSystemClipboard": true,
 	"editor.lineNumbers": "relative",
 	"vim.hlsearch": true,
 	"vim.incsearch": true,
 
-	// Если какие-то системные клавиши перехватывает сам VS Code, явно отдаём их Vim'у:
 	"vim.handleKeys": {
 		"<F1>": true,
 		"<F2>": true,
@@ -24,7 +23,7 @@
 		"<C-w>": false
 	},
 
-	// === NORMAL mode ===
+	// normal mode
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
 			"before": ["<leader>", "f", "f"],
@@ -36,23 +35,23 @@
 			"commands": ["editor.action.organizeImports"]
 		},
 
-		// <leader>s — Save all buffers
+		// <leader>s — Save buffer (file you're in)
 		{
 			"before": ["<leader>", "s"],
 			"commands": ["workbench.action.files.save"]
 		},
 
-		// <C-a> — Select all (вместо инкремента числа)
+		// <C-a> — Select all
 		{ "before": ["<C-a>"], "commands": ["editor.action.selectAll"] },
 
-		// <C-d>/<C-u> с центрированием
+		// <C-d>/<C-u> with centred
 		{ "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
 		{ "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
 
 		{ "before": ["<C-i>"], "after": ["<C-o>"] },
 		{ "before": ["<C-o>"], "after": ["<C-i>"] },
 
-		// n/N/*/#/g*/g# с центрированием
+		// n/N/*/#/g*/g# with centred
 		{ "before": ["n"], "after": ["n", "z", "z"] },
 		{ "before": ["N"], "after": ["N", "z", "z"] },
 		{ "before": ["*"], "after": ["*", "z", "z"] },
@@ -60,51 +59,106 @@
 		{ "before": ["g", "*"], "after": ["g", "*", "z", "z"] },
 		{ "before": ["g", "#"], "after": ["g", "#", "z", "z"] },
 
-		// H/L — начало/конец строки
+		// H/L — start/end of the line
 		{ "before": ["H"], "after": ["^"] },
 		{ "before": ["L"], "after": ["$"] },
 
-		// <Esc> — сброс подсветки поиска
+		// <Esc> — no search highlight
 		{ "before": ["<Esc>"], "commands": [":noh"] },
 
-		// Alt+=/-/,/. — изменение размера текущей группы (направления в VS Code неразделимы)
+		// ctrl+=/-/,/. — change view size 
 		{ "before": ["<C-=>"], "commands": ["workbench.action.increaseViewSize"] },
 		{ "before": ["<C-->"], "commands": ["workbench.action.decreaseViewSize"] },
 		{ "before": ["<C-,>"], "commands": ["workbench.action.increaseViewSize"] },
 		{ "before": ["<C-.>"], "commands": ["workbench.action.decreaseViewSize"] },
 
-		// === DAP ===
-		{ "before": ["<F5>"], "commands": ["workbench.action.debug.start"] }, // старт/продолжить
-		{ "before": ["<F1>"], "commands": ["workbench.action.debug.stepInto"] },
-		{ "before": ["<F2>"], "commands": ["workbench.action.debug.stepOver"] },
-		{ "before": ["<F3>"], "commands": ["workbench.action.debug.stepOut"] },
-		{ "before": ["<leader>", "b"], "commands": ["editor.debug.action.toggleBreakpoint"] },
-		{ "before": ["<leader>", "B"], "commands": ["editor.debug.action.conditionalBreakpoint"] },
-		{ "before": ["<F7>"], "commands": ["workbench.debug.action.toggleRepl"] },
-
-		// === FZF-Lua → аналоги в VS Code ===
+		// debuger
 		{
-			"before": ["<leader>", "f", "d"],
-			"commands": ["workbench.action.quickOpen"]
-		}, // файлы
+			"before": ["<F5>"],
+			"commands": ["workbench.action.debug.start"]
+		},
+		{
+			"before": ["<F1>"],
+			"commands": ["workbench.action.debug.stepInto"]
+		},
+		{
+			"before": ["<F2>"],
+			"commands": ["workbench.action.debug.stepOver"]
+		},
+		{
+			"before": ["<F3>"],
+			"commands": ["workbench.action.debug.stepOut"]
+		},
+		{
+			"before": ["<leader>", "b"],
+			"commands": ["editor.debug.action.toggleBreakpoint"]
+		},
+		{
+			"before": ["<leader>", "B"],
+			"commands": ["editor.debug.action.conditionalBreakpoint"]
+		},
+		{
+			"before": ["<F7>"],
+			"commands": ["workbench.debug.action.toggleRepl"]
+		},
+
+		// work with buffers (files)
 		{
 			"before": ["<leader>", "f", "o"],
 			"commands": ["workbench.action.showAllEditors"]
-		}, // buffers
+		},
 		{
 			"before": ["<leader>", "f", "r"],
 			"commands": ["workbench.action.openRecent"]
 		},
+		// git status
 		{
-			"before": ["<leader>", "f", "s"],
+			"before": ["<leader>", "f", "g"],
 			"commands": ["workbench.scm.focus"]
-		}, // git status
+		},
+		// git branches
 		{
-			"before": ["<leader>", "f", "b"],
+			"before": ["<leader>", "f", "c"],
 			"commands": ["git.checkout"]
-		}, // git branches
+		},
+		{
+			"before": ["<leader>", "g", "b"],
+			"commands": ["gitlens.toggleFileBlame"] 
+		}
+		{
+			"before": ["<leader>", "g", "d"],
+			"commands": ["git.openChange"] 
+		},
+		{
+			"before": ["<leader>", "g", "s"],
+			"commands": ["gitlens.partialStage"]
+		},
+		{
+			"before": ["<leader>", "g", "p"],
+			"commands": ["gitlens.diffLineWithPrevious"]
+		},
+		{
+			"before": ["<leader>", "g", "r"],
+			"commands": ["gitlens.resetSelectedLines"]
+		},
+		{
+			"before": ["<leader>", "g", "S"],
+			"commands": ["git.stage"]
+		},
+		{
+			"before": ["<leader>", "g", "R"],
+			"commands": ["gitlens.resetFile"]
+		},
+		{
+			"before": ["]", "h"],
+			"commands": ["editor.action.dirtydiff.next"]
+		},
+		{
+			"before": ["[", "h"],
+			"commands": ["editor.action.dirtydiff.previous"]
+		},
 
-		// LSP/код-навигация (замены твоих Lspsaga/fzf-lua)
+		// LSP/code navigation
 		{
 			"before": ["g", "d"],
 			"commands": ["editor.action.revealDefinition"]
@@ -134,7 +188,7 @@
 			"commands": ["editor.action.goToReferences"]
 		},
 
-		// Code actions / implementations / «перезапуск LSP»
+		// Code actions / implementations
 		{
 			"before": ["<leader>", "c", "a"],
 			"commands": ["editor.action.codeAction"]
@@ -149,48 +203,78 @@
 		}
 	],
 
-	// === VISUAL mode ===
+	// visual mode
 	"vim.visualModeKeyBindingsNonRecursive": [
-		// Переместить выделенные строки вниз/вверх (вместо :m ... gv=gv)
-		{ "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
-		{ "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+		{
+			"before": ["J"],
+			"commands": ["editor.action.moveLinesDownAction"]
+		},
+		{
+			"before": ["K"],
+			"commands": ["editor.action.moveLinesUpAction"]
+		},
 
-		// Повторять indent/dedent и сохранять выделение
-		{ "before": ["<"], "after": ["<", "g", "v"] },
-		{ "before": [">"], "after": [">", "g", "v"] },
+		{
+			"before": ["<"],
+			"after": ["<", "g", "v"]
+		},
+		{
+			"before": [">"],
+			"after": [">", "g", "v"]
+		},
 
-		// Вставить из буфера без замены system/yank (\"_dP)
-		{ "before": ["p"], "commands": [":normal! \\\"_dP"] },
+		// paste from (\"_dP)
+		{
+			"before": ["p"],
+			"commands": [":normal! \\\"_dP"]
+		},
 
-		// H/L — начало/конец строки в визуальном
-		{ "before": ["H"], "after": ["^"] },
-		{ "before": ["L"], "after": ["g", "_"] },
+		// H/L — start/end in visual
+		{
+			"before": ["H"],
+			"after": ["^"]
+		},
+		{
+			"before": ["L"],
+			"after": ["g", "_"]
+		},
 
-		// gitsigns-подобные штуки (через встроенный dirty diff + git команды)
-		{ "before": ["<leader>", "g", "s"], "commands": ["git.stageSelectedRanges"] },
-		{ "before": ["<leader>", "g", "r"], "commands": ["git.revertSelectedRanges"] }
+		// gitsigns
+		{
+			"before": ["<leader>", "g", "s"],
+			"commands": ["git.stageSelectedRanges"]
+		},
+		{
+			"before": ["<leader>", "g", "r"],
+			"commands": ["git.revertSelectedRanges"]
+		},
 	],
 
-	// === OPERATOR-PENDING (для H/L) ===
 	"vim.operatorPendingModeKeyBindingsNonRecursive": [
-		{ "before": ["H"], "after": ["^"] },
-		{ "before": ["L"], "after": ["g", "_"] }
+		{
+			"before": ["<capslock>"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["H"],
+			"after": ["^"]
+		},
+		{
+			"before": ["L"],
+			"after": ["g", "_"]
+		}
 	],
 
-	// === Git навигация по hunks (dirty diff) ===
-	"vim.normalModeKeyBindings": [
-		{ "before": ["]", "h"], "commands": ["editor.action.dirtydiff.next"] },
-		{ "before": ["[", "h"], "commands": ["editor.action.dirtydiff.previous"] }
+	"vim.insertModeKeyBindingsNonRecursive": [
+		{
+			"before": ["<Esc>"],
+			"after": ["<Esc>"]
+		}
 	],
+
 	"vim.sneak": true,
 	"explorer.confirmDelete": false,
-	// Дополнительно (по желанию):
-	// - Для blame/previev/diff как в gitsigns удобно поставить GitLens и повесить:
-	//   { "before": ["<leader>", "g", "b"], "commands": ["gitlens.toggleFileBlame"] }
-	//   { "before": ["<leader>", "g", "d"], "commands": ["git.openChange"] }
-	// - Для перезапуска TS-сервера (аналог LspRestart для TS):
-	//   { "before": ["<leader>", "r", "s"], "commands": ["typescript.restartTsServer"] }
-	//Main editor settings
+
 	"window.openFilesInNewWindow": "off",
 	"editor.tabSize": 2,
 	"editor.folding": true,
@@ -384,7 +468,7 @@
 	"explorer.confirmPasteNative": false,
 	"window.customTitleBarVisibility": "auto",
 	"window.density.editorTabHeight": "compact",
-	"workbench.iconTheme": "icons",
+	"workbench.iconTheme": "vscode-icons",
 	"terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 	"git.ignoreMissingGitWarning": true,
 	"files.associations": {
@@ -455,7 +539,6 @@
 	},
 	"terminal.integrated.defaultProfile.windows": "Arch (WSL)",
 	"workbench.editor.showTabs": "none",
-	"security.allowedUNCHosts": [
-		"wsl.localhost"
-	]
+	"security.allowedUNCHosts": ["wsl.localhost"],
+	"workbench.colorTheme": "Rosé Pine (no italics)"
 }
