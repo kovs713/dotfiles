@@ -1,7 +1,7 @@
-theme=rose-pine
-background-opacity=1
-clipboard-paste-protection=false
-confirm-close-surface=false
-shell-integration=fish
-font-family=JetBrainsMono Nerd Font
-font-size=20
+theme = Rose Pine
+background-opacity = 1
+clipboard-paste-protection = false
+confirm-close-surface = false
+shell-integration = zsh
+font-family = JetBrainsMono Nerd Font
+font-size = 20
