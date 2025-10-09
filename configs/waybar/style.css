@@ -1,79 +1,75 @@
+@import "../omarchy/current/theme/waybar.css";
+
 * {
+  background-color: @background;
+  color: @foreground;
+
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   min-height: 0;
-  min-width: 0;
-  font-family: "Iosevka Nerd Font";
-  font-size: 20px;
-  font-weight: 800;
+  font-family: 'CaskaydiaMono Nerd Font';
+  font-size: 12px;
 }
 
-window#waybar {
-  background-color: #191724; /* BG */
-  border-bottom: 5px solid #e0def4; /* FG */
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
 }
 
 #workspaces button {
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-  color: #9ccfd8; /* GREEN */
-  border-bottom: 7px solid #9ccfd8; /* GREEN */
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
 }
 
-#workspaces button.active {
-  color: #191724; /* BG */
-  background-color: #9ccfd8; /* GREEN */
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
-#workspaces button:hover {
-  color: #191724; /* BG */
-  background-color: #9ccfd8; /* GREEN */
-}
-
-#window,
-#network,
+#tray,
+#cpu,
 #battery,
-#weather,
-#language,
-#clock,
-#tray {
-  margin: 0;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-  border-radius: 0;
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-omarchy,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
 }
 
-#window {
-  color: #ebbcba; /* PURPLE */
-  border-bottom: 7px solid #ebbcba;
+#custom-expand-icon {
+  margin-right: 7px;
 }
 
-#network {
-  color: #eb6f92; /* RED */
-  border-bottom: 7px solid #eb6f92;
+tooltip {
+  padding: 2px;
 }
 
-#battery {
-  color: #f6c177; /* ORANGE */
-  border-bottom: 7px solid #f6c177;
-}
-
-#custom-weather {
-  color: #9ccfd8; /* GREEN */
-  border-bottom: 7px solid #9ccfd8;
-}
-
-#language {
-  color: #9ccfd8; /* GREEN */
-  border-bottom: 7px solid #9ccfd8;
+#custom-update {
+  font-size: 10px;
 }
 
 #clock {
-  color: #9ccfd8; /* GREEN */
-  border-bottom: 7px solid #9ccfd8;
+  margin-left: 8.75px;
 }
 
-#tray {
-  color: #ebbcba; /* PURPLE */
-  border-bottom: 7px solid #ebbcba;
+.hidden {
+  opacity: 0;
 }
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #a55555;
+}
+
