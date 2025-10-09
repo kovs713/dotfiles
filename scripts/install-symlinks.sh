@@ -30,7 +30,8 @@ for item in \
   ghostty \
   hypr \
   tmux \
-  waybar
+  waybar \
+  wofi
 do
   link "$DOTFILES/$item" "$CONFIG_DIR/$item"
 done
