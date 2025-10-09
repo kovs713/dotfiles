@@ -1,0 +1,11 @@
+ayugram-desktop-bin
+gemini-cli
+libmongocrypt
+libmongocrypt-debug
+mongosh
+mongosh-debug
+ngrok
+postman-bin
+throne
+vesktop-bin
+zen-browser-bin
