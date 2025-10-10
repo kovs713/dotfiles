@@ -7,6 +7,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
   "modules-right": [
+    "hyprland/language",
     "group/tray-expander",
     "bluetooth",
     "network",
@@ -14,6 +15,12 @@
     "cpu",
     "battery"
   ],
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "EN",
+    "format-ru": "RU",
+    "keyboard-name": "micro-star-int'l-co.,-ltd.-msi-gk50-elite-gaming-keyboard"
+  },
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
