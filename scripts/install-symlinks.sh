@@ -31,7 +31,8 @@ for item in \
   hypr \
   tmux \
   waybar \
-  wofi
+  wofi \
+  walker
 do
   link "$DOTFILES/$item" "$CONFIG_DIR/$item"
 done
