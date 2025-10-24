@@ -22,6 +22,7 @@ alias g='git'
 alias t='tmux new -s'
 alias vim='nvim'
 alias cls="clear"
+alias gst="git status -s"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
