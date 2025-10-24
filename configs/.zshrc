@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 export ZSH="$HOME/.oh-my-zsh"
 export LANG=en_US.UTF-8
@@ -19,10 +20,11 @@ fi
 
 alias ls='ls --color=auto'
 alias g='git'
-alias t='tmux new -s'
+alias tn='tmux new -s $(pwd | sed "s/.*\///g")'
 alias vim='nvim'
 alias cls="clear"
 alias gst="git status -s"
+alias ss="/home/kovs/dotfiles/scripts/smart-session.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
