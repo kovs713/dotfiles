@@ -25,6 +25,7 @@ alias vim='nvim'
 alias cls="clear"
 alias gst="git status -s"
 alias ss="/home/kovs/dotfiles/scripts/smart-session.sh"
+alias rmsw="rm ~/.local/state/nvim/swap/*.swp 2>/dev/null"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
