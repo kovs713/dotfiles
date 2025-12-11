@@ -23,7 +23,7 @@ link() {
 link "$DOTFILES/starship.toml" "$CONFIG_DIR/starship.toml"
 link "$DOTFILES/.zshrc" "$HOME/.zshrc"
 link "$DOTFILES/.zprofile" "$HOME/.zprofile"
-link "$DOTFILES/.idevimrc" "$HOME/.idevimrc"
+link "$DOTFILES/.ideavimrc" "$HOME/.ideavimrc"
 
 for item in \
   alacritty \
