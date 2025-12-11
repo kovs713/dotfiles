@@ -45,11 +45,6 @@ vnoremap p "_dP
 vnoremap H ^
 vnoremap L $
 
-nmap <A-h> <C-w>h
-nmap <A-l> <C-w>l
-nmap <A-k> <C-w>k
-nmap <A-j> <C-w>j
-
 nmap <leader>s <Action>(SaveAll)
 nmap <C-a> <Action>($SelectAll)
 
@@ -63,6 +58,17 @@ nmap <C-n> <Action>(NewElement)
 nmap <C-w> <Action>(CloseContent)
 
 nmap <leader>z <Action>(ToggleDistractionFreeMode)
+
+" flash plugin
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+
+nmap f <Action>(flash.find)
+xmap f <Action>(flash.find)
+
+nmap F <Action>(flash.find_backward)
+xmap F <Action>(flash.find_backward)
+
 
 " debug
 nmap <leader>du <Action>(Debug)
@@ -104,8 +110,8 @@ nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fd <Action>(GotoSymbol)
 
 nmap <leader>er <Action>(ActivateProjectToolWindow)
-nmap <leader>a <Action>(NewElement)
-nmap <leader>r <Action>(RenameElement)
+nmap <leader>nf <Action>(NewFile)
+nmap <leader>nd <Action>(NewDir)
 
 " LSP
 nmap gd <Action>(GotoDeclaration)
@@ -125,6 +131,7 @@ nmap <leader>ca <Action>(ShowIntentionActions)
 vmap <leader>ca <Action>(ShowIntentionActions)
 
 nmap <leader>f <Action>(ReformatCode)
+nmap <leader>fr <Action>(RearrangeCode)
 nmap <leader>i <Action>(OptimizeImports)
 
 
@@ -135,4 +142,14 @@ nmap <leader>rv <Action>(IntroduceVariable)
 nmap <leader>rf <Action>(IntroduceField)
 nmap <leader>rs <Action>(ChangeSignature)
 nmap <leader>rr <Action>(Refactoring.QuickListPop)
+
+nmap <leader>cg <Action>(Generate)
+nmap <leader>sa <Action>(SurroundWith)
+nmap <S-k> <Action>(EditorDuplicateLines)
+nmap <C-CR> <Action>(EditorCompleteStatement)
+nmap <A-[> <Action>(MethodUp)
+nmap <A-]> <Action>(MethodDown)
+
+nmap <A-j> <Action>(MoveStatementDown)
+nmap <A-k> <Action>(MoveStatementUp)
 
