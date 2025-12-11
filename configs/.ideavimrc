@@ -1,0 +1,127 @@
+" vim opts
+let mapleader = " "
+set clipboard^=unnamedplus,unnamed
+set relativenumber
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set timeoutlen=300
+set scrolloff=10
+set cursorline
+
+set showmode
+set sneak
+set commentary
+set surround
+set ideajoin
+set list
+
+" common keymaps
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+noremap <C-i> <C-o>
+noremap <C-o> <C-i>
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+noremap H ^
+noremap L $
+
+nnoremap <Esc> :noh<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+vnoremap p "_dP
+vnoremap H ^
+vnoremap L $
+
+nmap <A-h> <C-w>h
+nmap <A-l> <C-w>l
+nmap <A-k> <C-w>k
+nmap <A-j> <C-w>j
+
+nmap <leader>s <Action>(SaveAll)
+nmap <C-a> <Action>($SelectAll)
+
+nmap <C-,> <Action>(EditorDecreaseFontSize)
+nmap <C-.> <Action>(EditorIncreaseFontSize)
+
+vmap J <Action>(MoveLineDown)
+vmap K <Action>(MoveLineUp)
+
+nmap <C-n> <Action>(NewElement)
+nmap <C-w> <Action>(CloseContent)
+
+" debug
+nmap <leader>du <Action>(Debug)
+nmap <leader>do <Action>(StepInto)
+nmap <leader>doo <Action>(StepOver)
+nmap <leader>di <Action>(StepOut)
+nmap <leader>b <Action>(ToggleLineBreakpoint)
+nmap <leader>B <Action>(ViewBreakpoints)
+
+
+" git
+nmap <leader>gs <Action>(Git.StageChange)
+vmap <leader>gs <Action>(Git.StageChange)
+
+nmap <leader>gS <Action>(Git.StageFile)
+vmap <leader>gS <Action>(Git.StageFile)
+
+nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+vmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+
+vmap <leader>gR <Action>(Vcs.Rollback)
+nmap <leader>gR <Action>(Vcs.Rollback)
+
+vmap <leader>gd <Action>(Annotate)
+nmap <leader>gd <Action>(Annotate)
+
+vmap <leader>gD <Action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>gD <Action>(Vcs.ShowTabbedFileHistory)
+
+nmap <leader>gu <Action>(Git.UnstageChange)
+nmap <leader>gp <Action>(Compare.SameVersion)
+
+nmap ]h <Action>(VcsShowNextChangeMarker)
+nmap [h <Action>(VcsShowPrevChangeMarker)
+
+
+" file navigation
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fd <Action>(GotoSymbol)
+
+
+" LSP
+nmap gd <Action>(GotoDeclaration)
+
+nmap <leader>lh <Action>(ShowHoverInfo)
+nmap <leader>lR <Action>(RenameElement)
+nmap <leader>lr <Action>(ShowUsages)
+nmap <leader>ld <Action>(QuickDefinition)
+nmap <leader>li <Action>(GotoImplementation)
+nmap <leader>le <Action>(ShowErrorDescription)
+nmap <leader>lL <Action>(Synchronize)
+imap <C-h> <Action>(ParameterInfo)
+
+nmap <leader>]d <Action>(GotoNextError)
+nmap <leader>[d <Action>(GotoPreviousError)
+nmap <leader>ca <Action>(ShowIntentionActions)
+vmap <leader>ca <Action>(ShowIntentionActions)
+
+nmap <leader>f <Action>(ReformatCode)
+nmap <leader>i <Action>(OptimizeImports)
+
