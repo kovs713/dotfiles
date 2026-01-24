@@ -22,9 +22,14 @@ alias ls="ls --color=auto"
 alias g="git"
 alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
 alias vim="nvim"
+alias vi="\vim"
 alias cls="clear"
 alias gst="git status -s"
 alias ss="/home/kovs/dotfiles/scripts/smart-session.sh"
+sss() {
+    local dir
+    dir="$(zoxide query -l | fzf)" && cd "$dir"
+}
 alias rmsw="rm ~/.local/state/nvim/swap/*.swp 2>/dev/null"
 alias tr="tree -L 1 --dirsfirst"
 alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// /_}'; done"
