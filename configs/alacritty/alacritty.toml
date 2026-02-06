@@ -4,13 +4,19 @@ general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
 TERM = "xterm-256color"
 
 [font]
-# normal = { family = "Monocraft" }
-# bold = { family = "Monocraft" }
-# italic = { family = "Monocraft" }
-normal = { family = "CaskaydiaMono Nerd Font" }
-bold = { family = "CaskaydiaMono Nerd Font" }
-italic = { family = "CaskaydiaMono Nerd Font" }
 size = 20
+normal = { family = "Monocraft" }
+bold = { family = "Monocraft" }
+italic = { family = "Monocraft" }
+
+# normal = { family = "CaskaydiaMono Nerd Font" }
+# bold = { family = "CaskaydiaMono Nerd Font" }
+# italic = { family = "CaskaydiaMono Nerd Font" }
+# size = 20
+
+# normal = { family = "Miracode" }
+# bold = { family = "Miracode" }
+# italic = { family = "Miracode" }
 
 [window]
 padding.x = 0
