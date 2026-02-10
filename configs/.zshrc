@@ -37,6 +37,9 @@ alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
+
 # pnpm
 export PNPM_HOME="/home/kovs/.local/share/pnpm"
 case ":$PATH:" in
