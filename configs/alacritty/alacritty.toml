@@ -22,6 +22,7 @@ italic = { family = "Monocraft" }
 padding.x = 0
 padding.y = 0
 decorations = "None"
+opacity = 0.66
 
 [keyboard]
 bindings = [
