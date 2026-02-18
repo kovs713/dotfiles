@@ -34,6 +34,7 @@ alias rmsw="rm ~/.local/state/nvim/swap/*.swp 2>/dev/null"
 alias tr="tree -L 1 --dirsfirst"
 alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// /_}'; done"
 alias oc="opencode"
+alias lua5.1="lua51"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
