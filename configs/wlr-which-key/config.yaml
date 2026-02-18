@@ -50,7 +50,7 @@ menu:
 
   - key: "x"
     desc: "Calcure"
-    cmd: "sh -c 'calcure'"
+    cmd: 'ghostty --title="Calcure" -e calcure'
 
   - key: "c"
     desc: "Obsidian"
