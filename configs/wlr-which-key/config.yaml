@@ -1,0 +1,57 @@
+font: "JetBrainsMono Nerd Font 12"
+background: "#282828d0"
+color: "#fbf1c7"
+border: "#8ec07c"
+separator: " ➜ "
+border_width: 2
+corner_r: 10
+padding: 15
+rows_per_column: 5
+column_padding: 25
+anchor: center
+margin_top: 0
+margin_right: 0
+margin_bottom: 0
+margin_left: 0
+inhibit_compositor_keyboard_shortcuts: true
+auto_kbd_layout: true
+menu:
+  - key: "q"
+    desc: "Browser (Qute)"
+    cmd: "qutebrowser"
+
+  - key: "w"
+    desc: "Browser (Zen)"
+    cmd: "zen-browser"
+
+  - key: "e"
+    desc: "Telegram"
+    cmd: "telegram-desktop"
+
+  - key: "r"
+    desc: "Minecraft"
+    cmd: "elyprismlauncher"
+
+  - key: "a"
+    desc: "Throne"
+    cmd: "throne"
+
+  - key: "s"
+    desc: "AmneziaVPN"
+    cmd: "AmneziaVPN"
+
+  - key: "d"
+    desc: "Discord"
+    cmd: "discord"
+
+  - key: "z"
+    desc: "Libre Writer"
+    cmd: "sh -c 'libreoffice --writer'"
+
+  - key: "x"
+    desc: "Calcure"
+    cmd: "calcure"
+
+  - key: "c"
+    desc: "Obsidian"
+    cmd: "obsidian"
