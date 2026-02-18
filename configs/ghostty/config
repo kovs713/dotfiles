@@ -4,7 +4,7 @@ config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 # Font
 font-family = "Monocraft"
 font-style = Regular
-font-size = 22
+font-size = 24
 
 # Window
 window-padding-x = 0
