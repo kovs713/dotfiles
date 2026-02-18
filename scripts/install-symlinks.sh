@@ -30,12 +30,24 @@ for item in \
   cliphist \
   ghostty \
   hypr \
+  swayosd \
   tmux \
+  walker \
   waybar \
+  wlr-which-key \
   wofi \
-  walker
+  zathura
 do
   link "$DOTFILES/$item" "$CONFIG_DIR/$item"
 done
+
+# Only create backgrounds symlink if directory doesn't exist
+if [ ! -e "$CONFIG_DIR/omarchy/backgrounds" ]; then
+  mkdir -p "$CONFIG_DIR/omarchy"
+  ln -s "$DOTFILES/omarchy/backgrounds" "$CONFIG_DIR/omarchy/backgrounds"
+  echo "$CONFIG_DIR/omarchy/backgrounds → $DOTFILES/omarchy/backgrounds [DONE]"
+else
+  echo "$CONFIG_DIR/omarchy/backgrounds already exists, skipping"
+fi
 
 echo "All symlinks installed successfully"

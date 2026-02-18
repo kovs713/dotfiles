@@ -33,11 +33,13 @@ sss() {
 alias rmsw="rm ~/.local/state/nvim/swap/*.swp 2>/dev/null"
 alias tr="tree -L 1 --dirsfirst"
 alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// /_}'; done"
+alias oc="opencode"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-export GOPATH=$(go env GOPATH)
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # pnpm

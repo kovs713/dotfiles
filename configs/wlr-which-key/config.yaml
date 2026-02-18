@@ -26,7 +26,7 @@ menu:
 
   - key: "e"
     desc: "Telegram"
-    cmd: "telegram-desktop"
+    cmd: "AyuGram"
 
   - key: "r"
     desc: "Minecraft"
@@ -50,8 +50,12 @@ menu:
 
   - key: "x"
     desc: "Calcure"
-    cmd: "calcure"
+    cmd: "sh -c 'calcure'"
 
   - key: "c"
     desc: "Obsidian"
     cmd: "obsidian"
+
+  - key: "v"
+    desc: "Vesktop"
+    cmd: "vesktop"
