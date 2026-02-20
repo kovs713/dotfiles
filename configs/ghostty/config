@@ -9,6 +9,7 @@ font-size = 24
 # Window
 window-padding-x = 0
 window-padding-y = 0
+adjust-cell-height = 2
 confirm-close-surface=false
 resize-overlay = never
 background-opacity=0.66
