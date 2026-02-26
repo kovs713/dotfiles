@@ -44,6 +44,10 @@ menu:
     desc: "Discord"
     cmd: "discord"
 
+  - key: "f"
+    desc: "Zathura"
+    cmd: "zathura $HOME/obsidian-vault/static/books/"
+
   - key: "z"
     desc: "Libre Writer"
     cmd: "sh -c 'libreoffice --writer'"
