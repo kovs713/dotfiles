@@ -3,8 +3,7 @@
   "logo": {
     "type": "kitty",
     "source": "~/Downloads/trollface.png",
-    "width": 40,
-    "height": 20,
+    "height": 16,
     "padding": {
       "top": 2,
       "right": 6,
