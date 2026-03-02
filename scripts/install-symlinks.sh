@@ -30,6 +30,7 @@ for item in \
   cliphist \
   ghostty \
   hypr \
+  kitty \
   swayosd \
   tmux \
   walker \

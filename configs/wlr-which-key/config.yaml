@@ -54,7 +54,7 @@ menu:
 
   - key: "x"
     desc: "Calcure"
-    cmd: 'ghostty --title="Calcure" -e calcure'
+    cmd: 'kitty --title="Calcure" -e calcure'
 
   - key: "c"
     desc: "Obsidian"
