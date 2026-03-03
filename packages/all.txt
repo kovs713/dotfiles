@@ -193,7 +193,6 @@ throne-bin
 tldr
 tmux
 tree
-tree-sitter-cli
 ttf-cascadia-mono-nerd
 ttf-dejavu
 ttf-ia-writer
