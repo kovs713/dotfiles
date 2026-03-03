@@ -46,7 +46,6 @@
 #bluetooth,
 #pulseaudio,
 #custom-omarchy,
-#custom-screenrecording-indicator,
 #custom-update {
   min-width: 22px;
   margin: 0 10px;
@@ -67,4 +66,9 @@ tooltip {
 
 .hidden {
   opacity: 0;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
 }
