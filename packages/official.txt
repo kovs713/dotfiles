@@ -96,11 +96,9 @@ kvantum-qt5
 lazydocker
 lazygit
 less
-lib32-nvidia-utils
 libpulse
 libqalculate
 libreoffice-fresh
-libva-nvidia-driver
 libvips
 libyaml
 limine
@@ -131,8 +129,6 @@ noto-fonts-extra
 npm
 nss-mdns
 ntfs-3g
-nvidia-open-dkms
-nvidia-utils
 nvm
 obsidian
 obs-studio
@@ -174,7 +170,6 @@ rust-analyzer
 satty
 slurp
 snapper
-spotify
 starship
 sushi
 swaybg
