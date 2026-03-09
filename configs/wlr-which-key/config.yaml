@@ -1,7 +1,7 @@
-font: "JetBrainsMono Nerd Font 12"
-background: "#282828d0"
-color: "#fbf1c7"
-border: "#8ec07c"
+font: "CaskaydiaMono Nerd Font 14"
+background: "#101315"
+color: "#e4e4e4"
+border: "#dd6147"
 separator: " ➜ "
 border_width: 2
 corner_r: 10
