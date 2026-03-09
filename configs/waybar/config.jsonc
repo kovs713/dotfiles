@@ -31,22 +31,34 @@
     ]
   },
   "modules-center": [
-    "clock"
+    "clock",
+    "hyprland/language"
   ],
+  "clock": {
+    "format": " {:%H:%M %d/%m/%Y} ",
+    "format-alt": "{:L%d %B W%V %Y}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "month": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      },
+    },
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+  },
+  "hyprland/language": {
+    "format": "| {}",
+    "format-en": "EN",
+    "format-ru": "RU",
+    "tooltip": false
+  },
   "modules-right": [
     "hyprland/workspaces"
   ],
-  "custom/omarchy-theme": {
-    "exec": "omarchy-theme-current",
-    "interval": 5,
-    "format": "{}"
-  },
-  "custom/omarchy-theme-set": {
-    "on-click": "omarchy-theme-set Harbordark",
-    "tooltip-format": "Back to your setted Themes",
-    "interval": 5,
-    "format": "󰔎"
-  },
   "hyprland/workspaces": {
     "persistent-workspaces": {
       "*": [
@@ -139,6 +151,17 @@
       "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛"
     }
   },
+  "custom/omarchy-theme": {
+    "exec": "omarchy-theme-current",
+    "interval": 5,
+    "format": "{}"
+  },
+  "custom/omarchy-theme-set": {
+    "on-click": "omarchy-theme-set Harbordark",
+    "tooltip-format": "Back to your setted Themes",
+    "interval": 5,
+    "format": "󰔎"
+  },
   "custom/omarchy": {
     "format": "<span font='omarchy'>\ue900</span>",
     "on-click": "omarchy-menu",
@@ -206,22 +229,6 @@
       "🌖",
       "🌕"
     ]
-  },
-  "clock": {
-    "format": " {:%H:%M %d/%m/%Y}",
-    "format-alt": "{:L%d %B W%V %Y}",
-    "tooltip-format": "<span>{calendar}</span>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "on-click-right": "mode",
-      "format": {
-        "month": "<span color='#ffead3'><b>{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>"
-      },
-    },
-    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "network": {
     "format-icons": [
