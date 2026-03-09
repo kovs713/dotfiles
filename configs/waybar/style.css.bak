@@ -1,23 +1,25 @@
 @import "../omarchy/current/theme/waybar.css";
 
+/* @import "colors.css"; */
+
 * {
   border: none;
   border-radius: 0px;
   min-height: 0;
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: 'JetBrainsMono Nerd Font';
   font-weight: bold;
-  font-size: 16px;
+   font-size: 11px;
 }
 
 window#waybar {
-  background-color: transparent;
+    background-color: transparent;
 }
 window#waybar > box {
-  margin: 0px 0px 3px 0px;
+  margin: 0px 0px 2px 0px;
   background-color: @background;
-  box-shadow: 0px 2px 3px 2px #101010;
+  box-shadow: 0px 1px 2px 1px #101010;
   transition-property: background-color;
-  transition-duration: 0.5s;
+  transition-duration: .5s;
 }
 
 /* Left-Modules */
@@ -30,81 +32,108 @@ window#waybar > box {
 
 #left1 {
   background-color: alpha(@foreground, 0.05);
-  border-bottom: 1.5px solid alpha(@foreground, 0.5);
-  border-radius: 3px;
-  margin: 2px 3px;
-  padding: 0px 3px 0px;
+  border-bottom: 1px solid alpha(@foreground, 0.5);
+  border-radius: 2px;
+  margin: 1px 2px;
+  padding: 0px 2px 0px; 
 }
 
 #left2 {
   background-color: alpha(@foreground, 0.05);
-  border-bottom: 1.5px solid alpha(@foreground, 0.5);
-  border-radius: 3px;
-  padding: 0px 5px 0px;
-  margin: 2px 3px;
+  border-bottom: 1px solid alpha(@foreground, 0.5);
+  border-radius: 2px;
+  padding: 0px 4px 0px;
+  margin: 1px 2px;
 }
+
+#left3 {
+  background-color: alpha(@foreground, 0.05);
+  border-bottom: 1px solid alpha(@foreground, 0.5);
+  border-radius: 2px;
+  margin: 1px 2px;
+  padding: 0px 2px 0px;
+}
+
+.modules-right {
+  margin: 0px 0px;
+  padding: 0px 0px 0px; 
+  background-color: @background;
+}
+
+#right1 {
+  background-color: alpha(@foreground, 0.05);
+  border-bottom: 1px solid alpha(@foreground, 0.5);
+  border-radius: 2px;
+  margin: 1px 2px;
+  padding: 0px 2px 0px;
+}
+
 
 /* --- Workspaces --- */
 #workspaces {
   background-color: @background;
   opacity: 1;
-  margin: 2px 0px;
+  margin: 1px 0px;
   padding: 0px 0px 0px;
 }
 
 #workspaces button {
-  padding: 0px 14px;
-  margin: 2px 3px;
-  border-radius: 3px;
+  padding: 0px 10px;
+  margin: 1px 2px;
+  border-radius: 2px;
   background-color: alpha(@foreground, 0.55);
-  color: @background;
+  color: @background; 
   transition: all 0.15s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: #101010;
-  padding: 0 14px;
-  margin: 2px 3px;
-  background-color: #dd6147;
-  border-bottom: 3px solid #b84d35;
-  border-radius: 3px;
-  opacity: 1;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  color: @foreground;
+  padding: 0 10px;
+  margin: 1px 2px;
+  background-color: alpha(@foreground, 0.05);
+  border-bottom: 1.5px solid alpha(@foreground, 1);
+  border-radius: 2px;
+  opacity: 1.0;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.empty {
   background-color: alpha(@foreground, 0.05);
   color: @foreground;
   opacity: 0.75;
-  border-radius: 3px;
+  border-radius: 2px;
   transition: all 0.15s ease-in-out;
-  padding: 0px 7px;
-  margin: 2px 3px;
+  padding: 0px 5px;
+  margin: 1px 2px;
 }
 
 #workspaces button.empty.active {
-  background-color: #dd6147;
-  border-bottom: 3px solid #b84d35;
-  border-radius: 3px;
-  color: #101010;
+  background-color: alpha(@foreground, 0.05);
+  border-bottom: 1.5px solid alpha(@foreground, 1);
+  border-radius: 2px;
+  color: @foreground;
   opacity: 1;
-  padding: 0px 14px;
-  margin: 2px 3px;
+  padding: 0px 10px;
+  margin: 1px 2px;
 }
 
 #workspaces button:hover.empty,
 #workspaces button:hover {
-  background-color: #b84d35;
-  color: #101010;
-  opacity: 1;
+    background-color: @foreground;
+    color: @background;
+    opacity: 1;
 }
+
+
 
 #idle_inhibitor,
 #custom-updatespacman,
 #custom-omarchy,
 #custom-update,
 #custom-screenrecording-indicator,
+#clock,
 #custom-idle-indicator,
 #custom-notification-silencing-indicator,
 #custom-omarchy-theme,
@@ -112,7 +141,8 @@ window#waybar > box {
 #custom-voxtype,
 #custom-voxtype.recording,
 #custom-voxtype.transcribing,
-#mpris #tray,
+#mpris
+#tray,
 #cpu,
 #memory,
 #battery,
@@ -122,76 +152,40 @@ window#waybar > box {
 #mpris,
 #bluetooth,
 #pulseaudio {
-  min-width: 14px;
-  margin: 2px 2px 2px 2px;
-  padding: 0 6px;
-}
-
-#clock {
   min-width: 10px;
-  margin: 2px;
+  margin: 1px 1px 1px 1px;
+  padding: 0 4px;
 }
 
 tooltip {
-  padding: 6px;
-  background: @background;
-  border: 1px solid alpha(@foreground, 0.8);
-  border-radius: 12px;
-}
-tooltip label {
-  color: @foreground;
-  font-weight: normal;
-  font-size: 14px;
-}
-tooltip calendar {
-  font-size: 14px;
-}
-tooltip calendar header {
-  font-size: 15px;
-  font-weight: bold;
-  color: #ffead3;
-}
-tooltip calendar weekR {
-  font-size: 14px;
-  color: #ffcc66;
-}
-tooltip calendar day {
-  font-size: 14px;
-}
-tooltip calendar day.today {
-  font-weight: bold;
-  color: #ff6699;
-}
-tooltip calendar day:focus {
-  background-color: @foreground;
-  color: @background;
+  padding: 2px;
 }
 
 #power-profiles-daemon,
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-  font-size: 18px;
-  margin-top: 0px;
-  padding-right: 10px;
+font-size: 13.5px;
+margin-top: 0px;
+padding-right: 8px;
 }
 
 #custom-theme-switcher {
-  font-size: 17px;
+  font-size: 13px;
 }
 
 #tray > .passive {
-  -gtk-icon-effect: dim;
+    -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: @transparent;
+    -gtk-icon-effect: highlight;
+    background-color: @transparent;
 }
 
 #custom-voxtype {
-  min-width: 16px;
-  margin: 0 0 0 3.5px;
+  min-width: 12px;
+  margin: 0 0 0 2.5px;
 }
 
 #custom-voxtype.recording {
@@ -200,10 +194,10 @@ tooltip calendar day:focus {
 
 #custom-idle-indicator,
 #custom-notification-silencing-indicator {
-  min-width: 16px;
+  min-width: 12px;
   margin-left: 0;
   margin-right: 0;
-  font-size: 16px;
+  font-size: 12px;
   padding-bottom: 0px;
 }
 
@@ -225,7 +219,8 @@ tooltip calendar day:focus {
 #custom-omarchy-theme:hover,
 #custom-omarchy-theme-set:hover,
 #custom-theme-switcher:hover,
-#mpris:hover #tray:hover,
+#mpris:hover
+#tray:hover,
 #cpu:hover,
 #memory:hover,
 #battery:hover,
@@ -235,22 +230,22 @@ tooltip calendar day:focus {
 #mpris:hover,
 #bluetooth:hover,
 #pulseaudio:hover {
-  border-radius: 3px;
+  border-radius: 2px;
   opacity: 0.9;
   background-color: @foreground;
   color: @background;
 }
 
 tooltip {
-  padding: 4px;
-  background: @background;
-  border: 1px solid alpha(@foreground, 0.8);
-  border-radius: 8px;
+ padding: 4px;
+ background: @background;
+ border: 1px solid alpha(@foreground, 0.8);
+ border-radius: 8px;
 }
 tooltip label {
-  color: @foreground;
-  font-weight: normal;
-  font-size: 10px;
+    color: @foreground;
+    font-weight: normal;
+    font-size: 10px;
 }
 
 /* Specific animation Module */
@@ -269,30 +264,32 @@ tooltip label {
 }
 
 @keyframes blink-recording {
-  to {
-    color: @background;
-  }
+    to {
+        color: @background;
+    }
 }
 
+
 #mpris {
-  background-color: alpha(@foreground, 0.05);
-  border-bottom: 1.5px solid alpha(@foreground, 0.5);
-  border-radius: 3px;
-  margin: 2px 3px;
-  padding: 0px 5px 0px;
-  color: @foreground;
-  animation: repeat;
-  animation-name: blink;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+background-color: alpha(@foreground, 0.05);
+border-bottom: 1px solid alpha(@foreground, 0.5);
+border-radius: 2px;
+margin: 1px 2px;
+padding: 0px 4px 0px;
+color: @foreground;
+animation: repeat;
+	animation-name: blink;
+	animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes blink {
-  to {
-    color: @foreground;
-  }
+    to {
+        color: @foreground;
+        
+    }
 }
 #battery.warning {
   color: #c95d0f;
