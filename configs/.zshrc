@@ -9,6 +9,8 @@ bindkey -e
 export LANG=en_US.UTF-8
 setopt autocd autopushd pushdignoredups
 
+export PHONE_MAC_ADDRESS=A4:C6:F0:C0:7A:54
+
 # Completion (minimal)
 autoload -Uz compinit
 compinit -C
