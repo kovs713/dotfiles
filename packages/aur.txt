@@ -4,11 +4,8 @@ calcure
 checkstyle-bin
 electron39-bin
 elyprismlauncher-bin
-intellij-idea-ultimate-edition
 librepods-git
 otf-monocraft
-postgresql18
-postgresql18-libs
 py-mkvenv
 python-convertdate
 python-hijridate
@@ -17,7 +14,6 @@ python-jalali-core
 python-jdatetime
 python-korean_lunar_calendar
 python-nspektr
-throne-bin
 vial-appimage
 visual-studio-code-insiders-bin
 wlr-which-key

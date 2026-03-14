@@ -99,7 +99,6 @@ impala
 imv
 inetutils
 intel-ucode
-intellij-idea-ultimate-edition
 inxi
 ipset
 iptables-nft
@@ -173,9 +172,6 @@ plocate
 plymouth
 pnpm
 polkit-gnome
-postgresql-libs
-postgresql18
-postman-bin
 power-profiles-daemon
 py-mkvenv
 pyenv
@@ -210,11 +206,9 @@ tectonic
 texlive-basic
 texlive-latex
 texlive-latexrecommended
-throne-bin
 tldr
 tmux
 tree
-tree-sitter-cli
 ttf-cascadia-mono-nerd
 ttf-dejavu
 ttf-ia-writer

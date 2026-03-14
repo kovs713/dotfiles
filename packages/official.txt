@@ -165,8 +165,6 @@ plocate
 plymouth
 pnpm
 polkit-gnome
-postgresql-libs
-postman-bin
 power-profiles-daemon
 pyenv
 python-gobject
@@ -203,7 +201,6 @@ texlive-latexrecommended
 tldr
 tmux
 tree
-tree-sitter-cli
 ttf-cascadia-mono-nerd
 ttf-dejavu
 ttf-ia-writer

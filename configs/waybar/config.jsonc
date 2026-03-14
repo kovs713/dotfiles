@@ -32,11 +32,12 @@
   },
   "modules-center": [
     "clock",
-    "hyprland/language"
+    "hyprland/language",
+    "custom/screenrecording-indicator"
   ],
   "clock": {
-    "format": " {:%H:%M %d/%m/%Y} ",
-    "format-alt": "{:L%d %B W%V %Y} ",
+    "format": "  {:%H:%M %d/%m/%Y} ",
+    "format-alt": " {:L%d %B W%V %Y} ",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
@@ -51,7 +52,7 @@
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "hyprland/language": {
-    "format": "| {}",
+    "format": "| {} | ",
     "format-en": "EN",
     "format-ru": "RU",
     "tooltip": false
