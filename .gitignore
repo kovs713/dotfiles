@@ -1,0 +1,63 @@
+# Backup files
+*.backup.*
+*~
+*.swp
+*.swo
+*.swn
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Local configuration overrides
+configs/hypr/hyprland-local.conf
+configs/alacritty/alacritty-local.toml
+configs/kitty/kitty-local.conf
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+configs/wofi/pass
+configs/wofi/bookmarks
+configs/waybar/credentials.json
+
+# SSH keys (if accidentally placed here)
+configs/ssh/
+
+# Database files
+*.db
+*.sqlite
+
+# Cache directories
+cache/
+.ccache/
+
+# Build artifacts
+*.o
+*.a
+*.so
+
+# Package manager directories
+node_modules/
+vendor/
+__pycache__/
+.venv/
+venv/
+
+# Local scripts with sensitive data
+scripts/local-*.sh
