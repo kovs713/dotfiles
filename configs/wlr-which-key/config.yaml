@@ -53,8 +53,8 @@ menu:
     cmd: "sh -c 'libreoffice --writer'"
 
   - key: "x"
-    desc: "Calcure"
-    cmd: 'ghostty --title="Calcure" -e calcure'
+    desc: "Spotify"
+    cmd: "spotify"
 
   - key: "c"
     desc: "Obsidian"

@@ -2,9 +2,7 @@
 
 * {
   border: none;
-  border-radius: 0px;
-  min-height: 0;
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "CaskaydiaMono Nerd Font";
   font-weight: bold;
   font-size: 16px;
 }
@@ -13,9 +11,7 @@ window#waybar {
   background-color: transparent;
 }
 window#waybar > box {
-  margin: 0px 0px 3px 0px;
   background-color: @background;
-  box-shadow: 0px 2px 3px 2px #101010;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -23,8 +19,6 @@ window#waybar > box {
 /* Left-Modules */
 
 .modules-left {
-  margin: 0px 0px;
-  padding: 0px 0px 0px;
   background-color: @background;
 }
 
@@ -49,7 +43,6 @@ window#waybar > box {
   background-color: @background;
   opacity: 1;
   margin: 2px 0px;
-  padding: 0px 0px 0px;
 }
 
 #workspaces button {
@@ -100,15 +93,8 @@ window#waybar > box {
   opacity: 1;
 }
 
-#idle_inhibitor,
-#custom-updatespacman,
-#custom-omarchy,
-#custom-update,
 #custom-screenrecording-indicator,
-#custom-idle-indicator,
 #custom-notification-silencing-indicator,
-#custom-omarchy-theme,
-#custom-omarchy-theme-set,
 #custom-voxtype,
 #custom-voxtype.recording,
 #custom-voxtype.transcribing,
@@ -176,10 +162,6 @@ tooltip calendar day:focus {
   padding-right: 10px;
 }
 
-#custom-theme-switcher {
-  font-size: 17px;
-}
-
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
@@ -198,7 +180,6 @@ tooltip calendar day:focus {
   color: #a55555;
 }
 
-#custom-idle-indicator,
 #custom-notification-silencing-indicator {
   min-width: 16px;
   margin-left: 0;
@@ -207,7 +188,6 @@ tooltip calendar day:focus {
   padding-bottom: 0px;
 }
 
-#custom-idle-indicator.active,
 #custom-notification-silencing-indicator.active {
   color: #a55555;
 }
@@ -216,15 +196,9 @@ tooltip calendar day:focus {
   opacity: 0;
 }
 /* --- Hover right module  --- */
-#idle_inhibitor:hover,
-#custom-updatespacman:hover,
-#custom-omarchy:hover,
 #custom-update:hover,
 #custom-screenrecording-indicator:hover,
 #clock:hover,
-#custom-omarchy-theme:hover,
-#custom-omarchy-theme-set:hover,
-#custom-theme-switcher:hover,
 #mpris:hover #tray:hover,
 #cpu:hover,
 #memory:hover,

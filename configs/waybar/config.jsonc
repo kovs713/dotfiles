@@ -62,112 +62,18 @@
   ],
   "hyprland/workspaces": {
     "persistent-workspaces": {
-      "*": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ]
+      "*": 5
     },
     "on-click": "activate",
-    "format": "{icon} {windows}",
-    "format-window-separator": " ",
-    "window-rewrite-default": "",
-    "window-rewrite": {
-      "class<.*imv*.>": "",
-      "class<.*bambustudio*.>": "󰐫",
-      "class<.*bitwarden*.>": "",
-      "class<.*handbrake*.>": "󰈫",
-      "class<.*stremio*.>": "󱖏",
-      "title<.*waydroid*.>": "",
-      "title<.*amazon.*>": "",
-      "class<.*grayjay*.>": "󱗆",
-      "class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": "",
-      "class<zen>": "󰰷",
-      "class<waterfox|waterfox-bin>": "",
-      "class<microsoft-edge>": "",
-      "class<Chromium|Thorium|[Cc]hrome>": "",
-      "class<brave-browser>": "🦁",
-      "class<tor-browser>": "",
-      "class<firefox-developer-edition>": "🦊",
-      "class<kitty|konsole|kitty-dropterm|com.mitchellh.ghostty|org.wezfurlong.wezterm|org.omarchy.terminal>": "",
-      "class<[Tt]hunderbird|[Tt]hunderbird-esr>": "",
-      "class<eu.betterbird.Betterbird>": "",
-      "title<.*gmail.*>": "󰊫",
-      "class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop|ayugram|Ayugram>": "",
-      "class<discord|[Ww]ebcord|Vesktop>": "",
-      "title<.*whatsapp.*>": "",
-      "title<.*zapzap.*>": "",
-      "title<.*messenger.*>": "",
-      "title<.*facebook.*>": " ",
-      "title<.*reddit.*>": "",
-      "title<.*ChatGPT.*>": "󰚩",
-      "class<.*ChatGPT.*>": "󰚩",
-      "title<.*deepseek.*>": "󰚩",
-      "title<.*qwen.*>": "󰚩",
-      "class<subl>": "󰅳",
-      "class<slack>": "",
-      "class<mpv>": "",
-      "class<celluloid|Zoom>": "",
-      "class<Cider>": "󰎆 ",
-      "title<.*Picture-in-Picture.*>": "",
-      "title<.*youtube.*>": "",
-      "class<vlc>": "󰕼",
-      "title<.*cmus.*>": "",
-      "class<[Ss]potify>": "",
-      "class<virt-macodeger>": "",
-      "class<.virt-manager-wrapped>": "",
-      "class<virtualbox manager>": "💽",
-      "title<virtualbox>": "💽",
-      "class<remmina>": "🖥️",
-      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞",
-      "class<dev.zed.Zed>": "󰵁",
-      "class<codeblocks>": "󰅩",
-      "title<.*github.*>": "",
-      "class<mousepad>": "",
-      "class<libreoffice-writer>": "",
-      "class<libreoffice-startcenter>": " 󰏆",
-      "class<libreoffice-calc>": "",
-      "title<.*nvim ~.*>": "",
-      "class<org.gnome.Nautilus>": "󰣆",
-      "title<.*vim.*>": "",
-      "title<.*figma.*>": "",
-      "title<.*jira.*>": "",
-      "class<jetbrains-idea>": "",
-      "title<*.VSCode.*>": "󰨞",
-      "class<.*code.*>": "󰨞",
-      "class<obs|com.obsproject.Studio>": "",
-      "class<polkit-gnome-authentication-agent-1>": "󰒃",
-      "class<nwg-look>": "",
-      "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
-      "class<steam>": "",
-      "class<thunar|nemo>": "󰝰",
-      "class<Gparted>": "",
-      "class<gimp>": "",
-      "class<emulator>": "📱",
-      "class<android-studio>": "",
-      "class<org.pipewire.Helvum>": "󰓃",
-      "class<localsend>": "",
-      "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛"
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰰷",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "default": ""
     }
-  },
-  "custom/omarchy-theme": {
-    "exec": "omarchy-theme-current",
-    "interval": 5,
-    "format": "{}"
-  },
-  "custom/omarchy-theme-set": {
-    "on-click": "omarchy-theme-set Harbordark",
-    "tooltip-format": "Back to your setted Themes",
-    "interval": 5,
-    "format": "󰔎"
-  },
-  "custom/omarchy": {
-    "format": "<span font='omarchy'>\ue900</span>",
-    "on-click": "omarchy-menu",
-    "on-click-right": "xdg-terminal-exec",
-    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
   },
   "custom/voxtype": {
     "exec": "omarchy-voxtype-status",
@@ -193,21 +99,6 @@
     "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
     "signal": 10,
     "return-type": "json"
-  },
-  "custom/update": {
-    "format": "",
-    "exec": "omarchy-update-available",
-    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
-    "tooltip-format": "Omarchy update available",
-    "signal": 7,
-    "interval": 21600
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "󰛊",
-      "deactivated": "󰾪"
-    }
   },
   "cpu": {
     "interval": 2,
