@@ -152,3 +152,6 @@ esac
 
 alias zapret-config="$HOME/zapret-configs/install.sh"
 alias zapret-utils="$HOME/zapret-configs/utils-zapret.sh"
+
+export PATH=$PATH:/home/kovs/.spicetify
+export PATH=$PATH:~/.spicetify
