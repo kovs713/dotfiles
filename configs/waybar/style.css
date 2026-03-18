@@ -1,5 +1,15 @@
 @import "../omarchy/current/theme/waybar.css";
 
+@define-color black #101010;
+@define-color red1 #dd6147;
+@define-color red2 #b84d35;
+
+@define-color green1 #5c6a53;
+@define-color green2 #8fac70;
+@define-color green3 #4a5642;
+
+/* @define-color gold1; */
+
 * {
   border: none;
   font-family: "CaskaydiaMono Nerd Font";
@@ -56,11 +66,11 @@ window#waybar > box {
 }
 
 #workspaces button.active {
-  color: #101010;
+  color: @black;
   padding: 0 14px;
   margin: 2px 3px;
-  background-color: #dd6147;
-  border-bottom: 3px solid #b84d35;
+  background-color: @green2;
+  border-bottom: 3px solid @green3;
   border-radius: 3px;
   opacity: 1;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
@@ -77,10 +87,10 @@ window#waybar > box {
 }
 
 #workspaces button.empty.active {
-  background-color: #dd6147;
-  border-bottom: 3px solid #b84d35;
+  background-color: @green2;
+  border-bottom: 3px solid @green3;
   border-radius: 3px;
-  color: #101010;
+  color: @black;
   opacity: 1;
   padding: 0px 14px;
   margin: 2px 3px;
@@ -88,8 +98,8 @@ window#waybar > box {
 
 #workspaces button:hover.empty,
 #workspaces button:hover {
-  background-color: #b84d35;
-  color: #101010;
+  background-color: @green3;
+  color: @black;
   opacity: 1;
 }
 
