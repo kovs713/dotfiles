@@ -91,9 +91,9 @@ alias gunignore='git update-index --no-assume-unchanged'
 
 # Other aliases
 alias ff="fastfetch"
-alias ls="ls --color=auto"
-alias cls="clear"
-alias vim="nvim"
+alias l="ls --color=auto"
+alias c="clear"
+alias n="nvim"
 alias vi="\vim"
 alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
 alias ta="tmux attach"
