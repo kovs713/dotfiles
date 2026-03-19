@@ -8,6 +8,8 @@
 @define-color green2 #8fac70;
 @define-color green3 #4a5642;
 
+@define-color green4 #879a39;
+
 /* @define-color gold1; */
 
 * {
@@ -69,8 +71,8 @@ window#waybar > box {
   color: @black;
   padding: 0 14px;
   margin: 2px 3px;
-  background-color: @green2;
-  border-bottom: 3px solid @green3;
+  background-color: @green4;
+  border-bottom: 3px solid @green4;
   border-radius: 3px;
   opacity: 1;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
@@ -87,8 +89,8 @@ window#waybar > box {
 }
 
 #workspaces button.empty.active {
-  background-color: @green2;
-  border-bottom: 3px solid @green3;
+  background-color: @green4;
+  border-bottom: 3px solid @green4;
   border-radius: 3px;
   color: @black;
   opacity: 1;
@@ -98,7 +100,7 @@ window#waybar > box {
 
 #workspaces button:hover.empty,
 #workspaces button:hover {
-  background-color: @green3;
+  background-color: @green4;
   color: @black;
   opacity: 1;
 }
