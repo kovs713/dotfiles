@@ -2,14 +2,10 @@
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-# disable vi mode
-bindkey -e
+bindkey -v
 
 # Basic settings
-export LANG=en_US.UTF-8
 setopt autocd autopushd pushdignoredups
-
-export PHONE_MAC_ADDRESS=A4:C6:F0:C0:7A:54
 
 # Completion (minimal)
 autoload -Uz compinit
@@ -91,11 +87,8 @@ alias gunignore='git update-index --no-assume-unchanged'
 
 # Other aliases
 alias ff="fastfetch"
-alias l="ls --color=auto"
+alias l="ls -f --color=auto"
 alias c="clear"
-alias cls="clear"
-alias n="nvim"
-alias v="nvim"
 alias vim="nvim"
 alias vi="\vim"
 alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
@@ -113,48 +106,5 @@ sss() {
     dir="$(zoxide query -l | fzf)" && cd "$dir"
 }
 
-# Lazy load NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && export NVM_SOURCE="$NVM_DIR/nvm.sh"
-
-nvm() {
-  unset -f nvm node npm npx 2>/dev/null
-  [ -s "$NVM_SOURCE" ] && . "$NVM_SOURCE"
-  nvm "$@"
-}
-
-node() {
-  unset -f nvm node npm npx 2>/dev/null
-  [ -s "$NVM_SOURCE" ] && . "$NVM_SOURCE"
-  node "$@"
-}
-
-npm() {
-  unset -f nvm node npm npx 2>/dev/null
-  [ -s "$NVM_SOURCE" ] && . "$NVM_SOURCE"
-  npm "$@"
-}
-
-npx() {
-  unset -f nvm node npm npx 2>/dev/null
-  [ -s "$NVM_SOURCE" ] && . "$NVM_SOURCE"
-  npx "$@"
-}
-
-# Paths
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# pnpm
-export PNPM_HOME="/home/kovs/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
 alias zapret-config="$HOME/zapret-configs/install.sh"
 alias zapret-utils="$HOME/zapret-configs/utils-zapret.sh"
-
-export PATH=$PATH:/home/kovs/.spicetify
-export PATH=$PATH:~/.spicetify
