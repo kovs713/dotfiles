@@ -12,5 +12,4 @@ fi
 PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
 mkdir -p "$PLUGINS_DIR"
 
-git clone https://github.com/michaelaquilina/zsh-you-should-use.git "$PLUGINS_DIR/you-should-use"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$PLUGINS_DIR/zsh-syntax-highlighting"
