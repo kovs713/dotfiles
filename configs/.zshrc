@@ -87,7 +87,7 @@ alias gunignore='git update-index --no-assume-unchanged'
 
 # Other aliases
 alias ff="fastfetch"
-alias l="ls -f --color=auto"
+alias l="eza --no-filesize --long --color=always --icons=always --no-user"
 alias c="clear"
 alias vim="nvim"
 alias vi="\vim"
