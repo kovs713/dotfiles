@@ -1,4 +1,4 @@
-# dotfiles 🍵
+# dotfiles ☕️ 
 
 My personal chaos, carefully organized.  
 Arch + [Omarchy](https://omarchy.org/) + Hyprland scrolling layout + a suspiciously cozy terminal.
@@ -29,15 +29,23 @@ Arch + [Omarchy](https://omarchy.org/) + Hyprland scrolling layout + a suspiciou
 
 ## setup
 
+```bash
 git clone https://github.com/kovs713/dotfiles.git ~/dotfiles
 cd ~/dotfiles
+```
 
 ### packages
+
+```bash
 sudo pacman -S --needed - < packages/official.txt
 yay -S --needed - < packages/aur.txt
+```
 
 ### symlink everything
+
+```bash 
 bash symlinks.sh
+```
 
 ---
 
@@ -65,7 +73,7 @@ bash symlinks.sh
   │  `  │  z  │  x  │  c  │  v  │  b  │     │  n  │  m  │  ,  │  .  │  /  │  \  │
   └─────┴─────┴─────┴─────┴─────┴─────┘     └─────┴─────┴─────┴─────┴─────┴─────┘
                       ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
-                      │ mo2 │ mo1 │ spc │ │ del │ bsp │ ent │
+                      │ mo2 │ mo1 │ spc │ │ ent │ bsp │ del │
                       └─────┴─────┴─────┘ └─────┴─────┴─────┘
  
   layer 1 · sym
@@ -77,7 +85,7 @@ bash symlinks.sh
   │  ~  │  _  │  +  │  -  │  =  │     │     │     │  {  │  }  │     │     │     │
   └─────┴─────┴─────┴─────┴─────┴─────┘     └─────┴─────┴─────┴─────┴─────┴─────┘
                       ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
-                      │ mo2 │ mo1 │ spc │ │ del │ bsp │ ent │
+                      │ mo2 │ mo1 │ spc │ │ ent │ bsp │ del │
                       └─────┴─────┴─────┘ └─────┴─────┴─────┘
  
   layer 2 · nav
@@ -89,7 +97,7 @@ bash symlinks.sh
   │ br- │ mut │  ⏮  │  ⏯  │  ⏭  │  wd │     │  m← │  m↓ │  m↑ │  m→ │  v- │ pgd │
   └─────┴─────┴─────┴─────┴─────┴─────┘     └─────┴─────┴─────┴─────┴─────┴─────┘
                       ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
-                      │ mo2 │ mo1 │ spc │ │ del │ bsp │ ent │
+                      │ mo2 │ mo1 │ spc │ │ ent │ bsp │ del │
                       └─────┴─────┴─────┘ └─────┴─────┴─────┘
 ```
 
