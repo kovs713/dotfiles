@@ -8,8 +8,13 @@ bindkey -v
 setopt autocd autopushd pushdignoredups
 
 # Completion (minimal)
-autoload -Uz compinit
-compinit -C
+autoload -U compinit
+compinit
+
+# Autosuggest and syntax highlight 
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Editor
 if [[ -n $SSH_CONNECTION ]]; then
