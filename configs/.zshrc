@@ -10,6 +10,7 @@ setopt autocd autopushd pushdignoredups
 # Completion (minimal)
 autoload -U compinit
 compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Autosuggest and syntax highlight 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
