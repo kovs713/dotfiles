@@ -61,7 +61,7 @@ bash symlinks.sh
  
 ## keyboard
  
-3 layers. home row mods on `a s d f` / `h j k l` (Super, Alt, Shift, Ctrl).
+3 layers. home row mods on `a s d f` / `j k l ;` (Super, Alt, Shift, Ctrl).
  
 ```
   layer 0 · base
