@@ -185,6 +185,12 @@ tooltip calendar day:focus {
   background-color: @transparent;
 }
 
+#tray menu {
+  background-color: @background;
+  color: @foreground;
+  border-radius: 0px;
+}
+
 #custom-voxtype {
   min-width: 16px;
   margin: 0 0 0 3.5px;
