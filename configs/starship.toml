@@ -23,7 +23,6 @@ $python\
 $package\
 $docker_context\
 $kubernetes\
-$shell\
 $container\
 $jobs\
 ${custom.battery}\
@@ -49,7 +48,6 @@ color_git_deleted = "red"
 color_env = "cyan"
 color_kubernetes = "magenta"
 color_docker = "cyan"
-color_shell = "gray"
 color_container = "red"
 color_other = "magenta"
 color_duration = "yellow"
@@ -203,23 +201,6 @@ symbol = "󱃾"
 style = "fg:color_kubernetes"
 format = '( [($symbol( $cluster))]($style) )'
 disabled = false
-
-[shell]
-disabled = false
-format = '[  $indicator ]($style)'
-bash_indicator = "bash"
-fish_indicator = "fish"
-zsh_indicator = "zsh"
-powershell_indicator = "powershell"
-pwsh_indicator = "pwsh"
-ion_indicator = "ion"
-elvish_indicator = "elvish"
-tcsh_indicator = "tcsh"
-xonsh_indicator = "xonsh"
-cmd_indicator = "cmd"
-nu_indicator = "nu"
-unknown_indicator = ""
-style = "fg:color_shell"
 
 [container]
 style = "fg:color_container"
