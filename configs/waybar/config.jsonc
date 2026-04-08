@@ -32,6 +32,7 @@
   },
   "modules-center": [
     "clock",
+    "custom/weather",
     "hyprland/language",
     "custom/screenrecording-indicator"
   ],
@@ -47,12 +48,19 @@
         "month": "<span color='#ffead3'><b>{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b>{}</b></span>"
-      },
+      }
     },
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
+  "custom/weather": {
+    "format": "| {}",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --nerd --hide-conditions --lang ru --location Astrakhan",
+    "return-type": "json"
+  },
   "hyprland/language": {
-    "format": "| {} | ",
+    "format": "| {} ",
     "format-en": "EN",
     "format-ru": "RU",
     "tooltip": false

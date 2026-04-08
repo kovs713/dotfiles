@@ -132,6 +132,12 @@ window#waybar > box {
   margin: 2px;
 }
 
+#custom-weather {
+  min-width: 10px;
+  margin: 2px;
+  padding: 0 6px;
+}
+
 tooltip {
   padding: 6px;
   background: @background;
@@ -140,15 +146,16 @@ tooltip {
 }
 tooltip label {
   color: @foreground;
-  font-weight: normal;
-  font-size: 14px;
+  font-weight: 100;
+  font-size: 16px;
 }
 tooltip calendar {
   font-size: 14px;
+  font-weight: 100;
 }
 tooltip calendar header {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 100;
   color: #ffead3;
 }
 tooltip calendar weekR {
@@ -159,7 +166,7 @@ tooltip calendar day {
   font-size: 14px;
 }
 tooltip calendar day.today {
-  font-weight: bold;
+  font-weight: 100;
   color: #ff6699;
 }
 tooltip calendar day:focus {
@@ -219,6 +226,7 @@ tooltip calendar day:focus {
 #custom-update:hover,
 #custom-screenrecording-indicator:hover,
 #clock:hover,
+#custom-weather:hover,
 #mpris:hover #tray:hover,
 #cpu:hover,
 #memory:hover,
@@ -240,11 +248,12 @@ tooltip {
   background: @background;
   border: 1px solid alpha(@foreground, 0.8);
   border-radius: 8px;
+  font-weight: 100;
 }
 tooltip label {
   color: @foreground;
-  font-weight: normal;
-  font-size: 10px;
+  font-weight: 100;
+  font-size: 16px;
 }
 
 /* Specific animation Module */
