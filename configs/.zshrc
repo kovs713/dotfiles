@@ -114,3 +114,6 @@ sss() {
 
 alias zapret-config="$HOME/zapret-configs/install.sh"
 alias zapret-utils="$HOME/zapret-configs/utils-zapret.sh"
+
+export PATH="/home/kovs/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/kovs/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
