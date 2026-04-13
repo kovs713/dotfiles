@@ -1,2 +1,2 @@
-ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="Squalius-cephalus silakka54 Keyboard", RUN+="/home/kovs/dotfiles/scripts/disable-internal-keyboard.sh"
-ACTION=="remove", SUBSYSTEM=="input", ATTRS{name}=="Squalius-cephalus silakka54 Keyboard", RUN+="/home/kovs/dotfiles/scripts/enable-internal-keyboard.sh"
+ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="Squalius-cephalus silakka54 Keyboard", RUN+="/home/kovs/dotfiles/keyboard/disable-internal-keyboard.sh"
+ACTION=="remove", SUBSYSTEM=="input", ATTR{name}=="Squalius-cephalus silakka54 Keyboard", RUN+="/home/kovs/dotfiles/keyboard/enable-internal-keyboard.sh"
