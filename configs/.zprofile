@@ -7,6 +7,7 @@ export PATH=$PATH:$GOPATH/bin
 export PNPM_HOME="/home/kovs/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:/home/kovs/.spicetify
+export _ZO_EXCLUDE_DIRS="$HOME/.local/*:$HOME/Work:/mnt/*"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
