@@ -1,0 +1,15 @@
+@define-color black {{ selection_foreground }};
+@define-color red {{ accent }};
+@define-color red1 {{ active_border_color }};
+@define-color red2 {{ color9 }};
+@define-color green {{ color2 }};
+@define-color green1 {{ color2 }};
+@define-color green2 {{ color10 }};
+@define-color green3 {{ color11 }};
+@define-color muted {{ color1 }};
+@define-color month {{ color3 }};
+@define-color weekdays {{ color11 }};
+@define-color today {{ accent }};
+@define-color warning {{ color11 }};
+@define-color critical {{ color9 }};
+@define-color critical_text {{ foreground }};

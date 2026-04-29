@@ -12,7 +12,8 @@ window-padding-y = 0
 adjust-cell-height = 2
 confirm-close-surface=false
 resize-overlay = never
-background-opacity=0.66
+# background-opacity=0.66
+background-opacity=1
 
 # Cursor styling
 cursor-style = "block"

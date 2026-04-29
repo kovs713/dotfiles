@@ -51,4 +51,6 @@ else
   echo "$CONFIG_DIR/omarchy/backgrounds already exists, skipping"
 fi
 
+link "$DOTFILES/omarchy/themed" "$CONFIG_DIR/omarchy/themed"
+
 echo "All symlinks installed successfully"

@@ -1,17 +1,6 @@
-font: "CaskaydiaMono Nerd Font 14"
-# background: "#101315"
-# color: "#e4e4e4"
-# border: "#dd6147"
-# background: "#e4e4e4"
-# color: "#101315"
-# border: "#8fac70"
-
-# rose pine dawn
-background: "#faf4ed"
-color: "#0c0c0c"
-border: "#575279"
-border_width: 2
-corner_r: 10
+font: "CaskaydiaMono Nerd Font 18"
+border_width: 4
+corner_r: 0
 padding: 15
 rows_per_column: 5
 column_padding: 25
