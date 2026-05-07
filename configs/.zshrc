@@ -95,6 +95,7 @@ alias gunignore='git update-index --no-assume-unchanged'
 alias ff="fastfetch"
 alias l="eza --no-filesize --long --color=always --icons=always --no-user"
 alias c="clear"
+alias v="NVIM_APPNAME=nvim-minimal nvim"
 alias vim="nvim"
 alias vi="\vim"
 alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
