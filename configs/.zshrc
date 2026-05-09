@@ -107,6 +107,32 @@ alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// 
 alias oc="opencode"
 alias lua5.1="lua51"
 
+# Nvim plugin remove (0.12 vim.pack API)
+nvplrm() {
+  name="$1"
+  config_dir="$HOME/.config/nvim"
+  pack_dir="$HOME/.local/share/nvim/site/pack/core/opt"
+
+  if [ -z "$name" ]; then
+    echo "Usage: nvplrm <owner/repo>"
+    exit 1
+  fi
+
+  repo="${name##*/}"
+
+  # rm from pack.lua 
+  escaped_name=$(echo "$name" | sed 's/[[\.*^$/&]/\\&/g')
+  sed -i "/src = gh '$escaped_name'/d" "$config_dir/lua/kovs/pack.lua"
+
+  # rm from lock file
+  [ -f "$lockfile" ] && rm "$lockfile"
+
+  # rm from pack directory 
+  rm -rf "$pack_dir/$repo"
+
+  echo "Removed $name"
+}
+
 # Zoxide shortcut
 sss() {
     local dir
