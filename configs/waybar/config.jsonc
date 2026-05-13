@@ -7,8 +7,7 @@
   "margin-top": 0,
   "modules-left": [
     "group/left1",
-    "group/left2",
-    "mpris"
+    "group/left2"
   ],
   "group/left1": {
     "orientation": "inherit",
@@ -32,12 +31,17 @@
   },
   "modules-center": [
     "clock",
-    "custom/weather",
+    "custom/br",
+    "mpris",
+    "custom/br",
     "hyprland/language",
     "custom/screenrecording-indicator"
   ],
+  "custom/br": {
+    "format": " | "
+  },
   "clock": {
-    "format": "{:%H:%M %B %d} ",
+    "format": "{:%H:%M %B %d}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
@@ -51,15 +55,31 @@
     },
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
+  "mpris": {
+    "format": "󰋎 {artist} - {title}",
+    "format-paused": "<i><span color='grey'>{status_icon} {artist}</span></i>",
+    "max-length": 30,
+    "player-icons": {
+      "default": "⏸",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "󰋐"
+    },
+    "ignored-players": [
+      "chromium",
+      "brave"
+    ]
+  },
   "custom/weather": {
-    "format": "| {}",
+    "format": "{}",
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar --nerd --hide-conditions --lang ru --location Astrakhan",
     "return-type": "json"
   },
   "hyprland/language": {
-    "format": "| {} ",
+    "format": "{}",
     "format-en": "EN",
     "format-ru": "RU",
     "tooltip": false
@@ -235,22 +255,6 @@
       "balanced": "󰾅",
       "power-saver": "󰾆"
     }
-  },
-  "mpris": {
-    "format": "󰋎 {artist}-{title}",
-    "format-paused": "<i><span color='grey'>{status_icon} {artist}</span></i>",
-    "max-length": 30,
-    "player-icons": {
-      "default": "⏸",
-      "mpv": "🎵"
-    },
-    "status-icons": {
-      "paused": "󰋐"
-    },
-    "ignored-players": [
-      "chromium",
-      "brave"
-    ]
   },
   "custom/screenrecording-indicator": {
     "on-click": "omarchy-capture-screenrecording",

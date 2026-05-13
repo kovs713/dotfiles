@@ -65,7 +65,6 @@ window#waybar > box {
 
 #left1,
 #left2 {
-  background-color: alpha(@foreground, 0.05);
   padding: 0px 5px 0px;
 }
 
@@ -126,6 +125,7 @@ tooltip {
   padding: 4px;
   background: @background;
   border: 1px solid alpha(@foreground, 0.8);
+  border-radius: 0;
   font-weight: 100;
 }
 tooltip label {
@@ -173,7 +173,6 @@ tooltip calendar day:focus {
 }
 
 #mpris {
-  background-color: alpha(@foreground, 0.05);
   padding: 0px 5px 0px;
   color: @foreground;
 }
