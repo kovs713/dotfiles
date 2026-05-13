@@ -41,7 +41,7 @@
     "format": " | "
   },
   "clock": {
-    "format": "{:%H:%M %B %d}",
+    "format": "{:%H:%M %a %d}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
