@@ -28,6 +28,7 @@ link "$DOTFILES/.ideavimrc" "$HOME/.ideavimrc"
 for item in \
   alacritty \
   cliphist \
+  fastfetch \
   ghostty \
   hypr \
   kitty \

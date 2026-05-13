@@ -98,7 +98,7 @@ alias gunignore='git update-index --no-assume-unchanged'
 # Other aliases
 alias dcu="docker compose up"
 alias dcd="docker compose down"
-alias ff="fastfetch -l $HOME/dotfiles/screenshots/trollface.png"
+alias ff="fastfetch -c /home/kovs/.config/fastfetch/config.jsonc"
 alias l="eza --no-filesize --long --color=always --icons=always --no-user"
 alias c="clear"
 alias v="NVIM_APPNAME=nvim-minimal nvim"
