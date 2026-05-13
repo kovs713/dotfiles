@@ -2,6 +2,10 @@
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+eval "$(ssh-agent -s)" >/dev/null
+ssh-add -q ~/.ssh/id_ed25519_gitlab 2>/dev/null
+ssh-add -q ~/.ssh/id_ed25519_git 2>/dev/null
+
 bindkey -v
 
 # Basic settings
