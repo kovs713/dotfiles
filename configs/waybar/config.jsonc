@@ -37,8 +37,7 @@
     "custom/screenrecording-indicator"
   ],
   "clock": {
-    "format": "  {:%H:%M} ",
-    "format-alt": " {:L%d %B} ",
+    "format": "{:%H:%M %B %d} ",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",

@@ -21,12 +21,10 @@ window#waybar > box {
 #workspaces {
   background-color: @background;
   opacity: 1;
-  margin: 2px 0px;
 }
 
 #workspaces button {
   padding: 0px 14px;
-  margin: 2px 3px;
   border-radius: 0;
   background-color: alpha(@foreground, 0.55);
   color: @background;
@@ -47,11 +45,9 @@ window#waybar > box {
 
 #workspaces button.empty.active {
   background-color: @red2;
-  border-bottom: 3px solid @red2;
   color: @black;
   opacity: 1;
   padding: 0px 14px;
-  margin: 2px 3px;
 }
 
 #workspaces button:hover.empty,
@@ -70,9 +66,7 @@ window#waybar > box {
 #left1,
 #left2 {
   background-color: alpha(@foreground, 0.05);
-  border-bottom: 1.5px solid alpha(@foreground, 0.5);
   padding: 0px 5px 0px;
-  margin: 2px 3px;
 }
 
 #custom-screenrecording-indicator,
@@ -91,25 +85,20 @@ window#waybar > box {
 #bluetooth,
 #pulseaudio {
   min-width: 14px;
-  margin: 2px 2px 2px 2px;
   padding: 0 6px;
 }
 
 #clock {
   min-width: 10px;
-  margin: 2px;
 }
 
 #custom-weather {
   min-width: 10px;
-  margin: 2px;
   padding: 0 6px;
 }
 
 #custom-notification-silencing-indicator {
   min-width: 16px;
-  margin-left: 0;
-  margin-right: 0;
   font-size: 16px;
   padding-bottom: 0px;
 }
@@ -174,7 +163,6 @@ tooltip calendar day:focus {
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
   font-size: 18px;
-  margin-top: 0px;
   padding-right: 10px;
 }
 
@@ -186,8 +174,6 @@ tooltip calendar day:focus {
 
 #mpris {
   background-color: alpha(@foreground, 0.05);
-  border-bottom: 1.5px solid alpha(@foreground, 0.5);
-  margin: 2px 3px;
   padding: 0px 5px 0px;
   color: @foreground;
 }
