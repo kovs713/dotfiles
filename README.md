@@ -5,7 +5,7 @@ Arch + [Omarchy](https://omarchy.org/) + Hyprland scrolling layout + a suspiciou
 
 ---
 
-![Desktop screenshot](./screenshots/desktop.png)
+![Desktop screenshot](screenshots/preview.png)
 
 ---
 
@@ -21,9 +21,6 @@ Arch + [Omarchy](https://omarchy.org/) + Hyprland scrolling layout + a suspiciou
 | Bar | Waybar |
 | Font | CaskaydiaMono Nerd Font |
 
----
-
-![Terminal screenshot](./screenshots/terminal.png)
 
 ---
 
@@ -53,7 +50,7 @@ bash symlinks.sh
 
 `scripts/smart-session.sh` — tmux sessionizer via zoxide + fzf. Jump to any project in ~2 keystrokes.
 
-`keyboard/` — Vial layout for my 42 keys split + udev rules for disabling the internal keyboard when an external one is plugged in.
+`keyboard/` — Vial layout for my 42 keys split (actually it is 56 keys but i use only 42) + udev rules for disabling the internal keyboard when an external one is plugged in.
 
 `packages/` — full package lists.
 
