@@ -24,33 +24,20 @@ window#waybar > box {
 }
 
 #workspaces button {
-  padding: 0px 14px;
+  margin: 8px 0px;
+  padding: 0px 8px;
   border-radius: 0;
-  background-color: alpha(@foreground, 0.55);
-  color: @background;
+  background-color: @background;
+  color: @foreground;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: @black;
-  background-color: @red2;
+  color: @background;
+  background: @red2;
   opacity: 1;
 }
 
-#workspaces button.empty {
-  background-color: alpha(@foreground, 0.05);
-  color: @foreground;
-  opacity: 0.75;
-}
-
-#workspaces button.empty.active {
-  background-color: @red2;
-  color: @black;
-  opacity: 1;
-  padding: 0px 14px;
-}
-
-#workspaces button:hover.empty,
 #workspaces button:hover {
   background-color: @red2;
   color: @black;

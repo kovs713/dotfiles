@@ -54,7 +54,7 @@ alias gcpc='git cherry-pick --continue'
 alias gclean='git clean --interactive -d'
 alias gcl='git clone --recurse-submodules'
 alias gcmsg='git commit --message'
-alias gc='git commit --verbose'
+alias gc='git commit'
 alias gca='git commit --verbose --all'
 alias gf='git fetch'
 alias gfo='git fetch origin'
@@ -96,6 +96,8 @@ alias gignore='git update-index --assume-unchanged'
 alias gunignore='git update-index --no-assume-unchanged'
 
 # Other aliases
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 alias ff="fastfetch"
 alias l="eza --no-filesize --long --color=always --icons=always --no-user"
 alias c="clear"
