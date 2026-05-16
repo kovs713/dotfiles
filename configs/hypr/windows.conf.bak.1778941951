@@ -34,10 +34,10 @@ windowrule {
 }
 
 windowrule {
-  name = gtk-file-upload
+  name = browsers-ws2
   float = on
-  center = on
   match:class = (xdg-desktop-portal-gtk)$
+  match:title = (File Upload)$
 }
 
 windowrule {
