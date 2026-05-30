@@ -112,6 +112,7 @@ alias tr="tree -L 1 --dirsfirst"
 alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// /_}'; done"
 alias oc="opencode"
 alias lua5.1="lua51"
+alias cr="critique"
 
 # Nvim plugin remove (0.12 vim.pack API)
 nvplrm() {
