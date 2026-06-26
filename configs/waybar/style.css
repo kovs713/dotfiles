@@ -40,7 +40,7 @@ window#waybar > box {
 
 #workspaces button:hover {
   background-color: @red2;
-  color: @black;
+  color: @background;
   opacity: 1;
 }
 
