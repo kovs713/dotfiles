@@ -1,92 +1,119 @@
-local terminal = "ghostty"
+local terminal = "xdg-terminal-exec"
 
 local function bind(keys, desc, dispatcher, opts)
-  opts = opts or {}
-  opts.description = desc
-  hl.bind(keys, dispatcher, opts)
+	opts = opts or {}
+	opts.description = desc
+	hl.bind(keys, dispatcher, opts)
 end
 
 local function exec(keys, desc, cmd, opts)
-  bind(keys, desc, hl.dsp.exec_cmd(cmd), opts)
+	bind(keys, desc, hl.dsp.exec_cmd(cmd), opts)
 end
 
 local function unbind(keys)
-  pcall(function()
-    hl.unbind(keys)
-  end)
+	pcall(function()
+		hl.unbind(keys)
+	end)
 end
 
--- Make sure Omarchy defaults never survive on local muscle-memory keys.
 for _, keys in ipairs({
-  "SUPER + C",
-  "SUPER + F",
-  "SUPER + H",
-  "SUPER + J",
-  "SUPER + K",
-  "SUPER + L",
-  "SUPER + P",
-  "SUPER + V",
-  "SUPER + W",
-  "SUPER + slash",
-  "SUPER + code:61",
-  "SUPER + SHIFT + P",
-  "SUPER + CTRL + H",
-  "SUPER + CTRL + L",
-  "SUPER + CTRL + R",
+	"SUPER + C",
+	"SUPER + F",
+	"SUPER + H",
+	"SUPER + J",
+	"SUPER + K",
+	"SUPER + L",
+	"SUPER + P",
+	"SUPER + Q",
+	"SUPER + V",
+	"SUPER + W",
+	"SUPER + slash",
+	"SUPER + code:61",
+	"SUPER + SHIFT + P",
+	"SUPER + CTRL + H",
+	"SUPER + CTRL + L",
+	"SUPER + CTRL + R",
 }) do
-  unbind(keys)
+	unbind(keys)
 end
 
--- Media keys from Omarchy defaults.
-exec("XF86AudioRaiseVolume", "Volume up", "omarchy-swayosd-client --output-volume raise", { locked = true, repeating = true })
-exec("XF86AudioLowerVolume", "Volume down", "omarchy-swayosd-client --output-volume lower", { locked = true, repeating = true })
+exec(
+	"XF86AudioRaiseVolume",
+	"Volume up",
+	"omarchy-swayosd-client --output-volume raise",
+	{ locked = true, repeating = true }
+)
+exec(
+	"XF86AudioLowerVolume",
+	"Volume down",
+	"omarchy-swayosd-client --output-volume lower",
+	{ locked = true, repeating = true }
+)
 exec("XF86AudioMute", "Mute", "omarchy-swayosd-client --output-volume mute-toggle", { locked = true, repeating = true })
 exec("XF86AudioMicMute", "Mute microphone", "omarchy-audio-input-mute", { locked = true, repeating = true })
 exec("XF86MonBrightnessUp", "Brightness up", "omarchy-brightness-display +5%", { locked = true, repeating = true })
 exec("XF86MonBrightnessDown", "Brightness down", "omarchy-brightness-display 5%-", { locked = true, repeating = true })
-exec("SHIFT + XF86MonBrightnessUp", "Brightness maximum", "omarchy-brightness-display 100%", { locked = true, repeating = true })
-exec("SHIFT + XF86MonBrightnessDown", "Brightness minimum", "omarchy-brightness-display 1%", { locked = true, repeating = true })
-exec("XF86KbdBrightnessUp", "Keyboard brightness up", "omarchy-brightness-keyboard up", { locked = true, repeating = true })
-exec("XF86KbdBrightnessDown", "Keyboard brightness down", "omarchy-brightness-keyboard down", { locked = true, repeating = true })
+exec(
+	"SHIFT + XF86MonBrightnessUp",
+	"Brightness maximum",
+	"omarchy-brightness-display 100%",
+	{ locked = true, repeating = true }
+)
+exec(
+	"SHIFT + XF86MonBrightnessDown",
+	"Brightness minimum",
+	"omarchy-brightness-display 1%",
+	{ locked = true, repeating = true }
+)
+exec(
+	"XF86KbdBrightnessUp",
+	"Keyboard brightness up",
+	"omarchy-brightness-keyboard up",
+	{ locked = true, repeating = true }
+)
+exec(
+	"XF86KbdBrightnessDown",
+	"Keyboard brightness down",
+	"omarchy-brightness-keyboard down",
+	{ locked = true, repeating = true }
+)
 exec("XF86KbdLightOnOff", "Keyboard backlight cycle", "omarchy-brightness-keyboard cycle", { locked = true })
 exec("XF86TouchpadToggle", "Toggle touchpad", "omarchy-toggle-touchpad", { locked = true })
 exec("XF86TouchpadOn", "Enable touchpad", "omarchy-toggle-touchpad on", { locked = true })
 exec("XF86TouchpadOff", "Disable touchpad", "omarchy-toggle-touchpad off", { locked = true })
-exec("ALT + XF86AudioRaiseVolume", "Volume up precise", "omarchy-swayosd-client --output-volume +1", { locked = true, repeating = true })
-exec("ALT + XF86AudioLowerVolume", "Volume down precise", "omarchy-swayosd-client --output-volume -1", { locked = true, repeating = true })
-exec("ALT + XF86MonBrightnessUp", "Brightness up precise", "omarchy-brightness-display +1%", { locked = true, repeating = true })
-exec("ALT + XF86MonBrightnessDown", "Brightness down precise", "omarchy-brightness-display 1%-", { locked = true, repeating = true })
+exec(
+	"ALT + XF86AudioRaiseVolume",
+	"Volume up precise",
+	"omarchy-swayosd-client --output-volume +1",
+	{ locked = true, repeating = true }
+)
+exec(
+	"ALT + XF86AudioLowerVolume",
+	"Volume down precise",
+	"omarchy-swayosd-client --output-volume -1",
+	{ locked = true, repeating = true }
+)
+exec(
+	"ALT + XF86MonBrightnessUp",
+	"Brightness up precise",
+	"omarchy-brightness-display +1%",
+	{ locked = true, repeating = true }
+)
+exec(
+	"ALT + XF86MonBrightnessDown",
+	"Brightness down precise",
+	"omarchy-brightness-display 1%-",
+	{ locked = true, repeating = true }
+)
 exec("XF86AudioNext", "Next track", "omarchy-swayosd-client --playerctl next", { locked = true })
 exec("XF86AudioPause", "Pause", "omarchy-swayosd-client --playerctl play-pause", { locked = true })
 exec("XF86AudioPlay", "Play", "omarchy-swayosd-client --playerctl play-pause", { locked = true })
 exec("XF86AudioPrev", "Previous track", "omarchy-swayosd-client --playerctl previous", { locked = true })
 exec("SUPER + XF86AudioMute", "Switch audio output", "omarchy-audio-output-switch", { locked = true })
 
--- Omarchy app/menu binds that do not conflict with local HJKL/close/float/fullscreen binds.
-exec("SUPER + Return", "Terminal", "uwsm-app -- xdg-terminal-exec --dir=\"$(omarchy-cmd-terminal-cwd)\"")
-exec("SUPER + ALT + Return", "Tmux", "uwsm-app -- xdg-terminal-exec --dir=\"$(omarchy-cmd-terminal-cwd)\" tmux new")
-exec("SUPER + SHIFT + Return", "Browser", "omarchy-launch-browser")
-exec("SUPER + SHIFT + F", "File manager", "uwsm-app -- nautilus --new-window")
-exec("SUPER + ALT + SHIFT + F", "File manager cwd", "uwsm-app -- nautilus --new-window \"$(omarchy-cmd-terminal-cwd)\"")
-exec("SUPER + SHIFT + B", "Browser", "omarchy-launch-browser")
-exec("SUPER + SHIFT + ALT + B", "Browser private", "omarchy-launch-browser --private")
-exec("SUPER + SHIFT + M", "Music", "omarchy-launch-or-focus spotify")
 exec("SUPER + SHIFT + ALT + M", "Music TUI", "omarchy-launch-or-focus-tui cliamp")
-exec("SUPER + SHIFT + N", "Editor", "omarchy-launch-editor")
 exec("SUPER + SHIFT + D", "Docker", "omarchy-launch-tui lazydocker")
-exec("SUPER + SHIFT + G", "Signal", "omarchy-launch-or-focus ^signal$ \"uwsm-app -- signal-desktop\"")
-exec("SUPER + SHIFT + O", "Obsidian", "omarchy-launch-or-focus ^obsidian$ \"uwsm-app -- obsidian\"")
-exec("SUPER + SHIFT + W", "Typora", "uwsm-app -- typora --enable-wayland-ime")
-exec("SUPER + SHIFT + slash", "Passwords", "uwsm-app -- 1password")
-exec("SUPER + SHIFT + A", "ChatGPT", "omarchy-launch-webapp \"https://chatgpt.com\"")
-exec("SUPER + SHIFT + ALT + A", "Grok", "omarchy-launch-webapp \"https://grok.com\"")
-exec("SUPER + SHIFT + C", "Calendar", "omarchy-launch-webapp \"https://app.hey.com/calendar/weeks/\"")
-exec("SUPER + SHIFT + E", "Email", "omarchy-launch-webapp \"https://app.hey.com\"")
-exec("SUPER + SHIFT + Y", "YouTube", "omarchy-launch-webapp \"https://youtube.com/\"")
-exec("SUPER + SHIFT + ALT + G", "WhatsApp", "omarchy-launch-or-focus-webapp WhatsApp \"https://web.whatsapp.com/\"")
-exec("SUPER + SHIFT + CTRL + G", "Google Messages", "omarchy-launch-or-focus-webapp \"Google Messages\" \"https://messages.google.com/web/conversations\"")
-exec("SUPER + SHIFT + X", "X", "omarchy-launch-webapp \"https://x.com/\"")
-exec("SUPER + SHIFT + ALT + X", "X Post", "omarchy-launch-webapp \"https://x.com/compose/post\"")
+exec("SUPER + SHIFT + O", "Obsidian", 'omarchy-launch-or-focus ^obsidian$ "uwsm-app -- obsidian"')
 
 exec("SUPER + SPACE", "Launch apps", "omarchy-launch-walker")
 exec("SUPER + CTRL + E", "Emoji picker", "omarchy-launch-walker -m symbols")
@@ -100,7 +127,11 @@ exec("SUPER + CTRL + SPACE", "Theme background menu", "omarchy-menu background")
 exec("SUPER + SHIFT + CTRL + SPACE", "Theme menu", "omarchy-menu theme")
 exec("SUPER + BACKSPACE", "Toggle window transparency", "omarchy-hyprland-window-transparency-toggle")
 exec("SUPER + SHIFT + BACKSPACE", "Toggle window gaps", "omarchy-hyprland-window-gaps-toggle")
-exec("SUPER + CTRL + BACKSPACE", "Toggle single-window square aspect", "omarchy-hyprland-window-single-square-aspect-toggle")
+exec(
+	"SUPER + CTRL + BACKSPACE",
+	"Toggle single-window square aspect",
+	"omarchy-hyprland-window-single-square-aspect-toggle"
+)
 exec("SUPER + COMMA", "Dismiss last notification", "makoctl dismiss")
 exec("SUPER + SHIFT + COMMA", "Dismiss all notifications", "makoctl dismiss --all")
 exec("SUPER + CTRL + COMMA", "Toggle silencing notifications", "omarchy-toggle-notification-silencing")
@@ -109,8 +140,17 @@ exec("SUPER + SHIFT + ALT + COMMA", "Restore last notification", "makoctl restor
 exec("SUPER + CTRL + I", "Toggle locking on idle", "omarchy-toggle-idle")
 exec("SUPER + CTRL + N", "Toggle nightlight", "omarchy-toggle-nightlight")
 exec("SUPER + CTRL + Delete", "Toggle laptop display", "omarchy-hyprland-monitor-internal toggle")
-exec("SUPER + CTRL + ALT + Delete", "Toggle laptop display mirroring", "omarchy-hyprland-monitor-internal-mirror toggle")
-exec("switch:on:Lid Switch", "Laptop display off", "omarchy-hw-external-monitors && omarchy-hyprland-monitor-internal off", { locked = true })
+exec(
+	"SUPER + CTRL + ALT + Delete",
+	"Toggle laptop display mirroring",
+	"omarchy-hyprland-monitor-internal-mirror toggle"
+)
+exec(
+	"switch:on:Lid Switch",
+	"Laptop display off",
+	"omarchy-hw-external-monitors && omarchy-hyprland-monitor-internal off",
+	{ locked = true }
+)
 exec("switch:off:Lid Switch", "Laptop display on", "omarchy-hyprland-monitor-internal on", { locked = true })
 exec("Print", "Screenshot", "omarchy-capture-screenshot")
 exec("ALT + Print", "Screenrecording", "omarchy-menu screenrecord")
@@ -121,8 +161,8 @@ exec("SUPER + CTRL + PERIOD", "Transcode", "omarchy-transcode")
 exec("SUPER + SHIFT + CTRL + R", "Clear reminders", "omarchy-reminder clear")
 exec("SUPER + CTRL + ALT + R", "Show reminders", "omarchy-reminder show")
 exec("SUPER + CTRL + ALT + T", "Show time", "notify-send -u low \"$(date '+%A %H:%M - %d %B %Y - Week %V')\"")
-exec("SUPER + CTRL + ALT + B", "Show battery", "notify-send -u low \"$(omarchy-battery-status)\"")
-exec("SUPER + CTRL + ALT + W", "Show weather", "notify-send -u low \"$(omarchy-weather-status)\"")
+exec("SUPER + CTRL + ALT + B", "Show battery", 'notify-send -u low "$(omarchy-battery-status)"')
+exec("SUPER + CTRL + ALT + W", "Show weather", 'notify-send -u low "$(omarchy-weather-status)"')
 exec("SUPER + CTRL + A", "Audio controls", "omarchy-launch-audio")
 exec("SUPER + CTRL + B", "Bluetooth controls", "omarchy-launch-bluetooth")
 exec("SUPER + CTRL + W", "Wifi controls", "omarchy-launch-wifi")
@@ -130,7 +170,11 @@ exec("SUPER + CTRL + T", "Activity", "omarchy-launch-tui btop")
 exec("SUPER + CTRL + X", "Toggle dictation", "voxtype record toggle")
 exec("F9", "Start dictation", "voxtype record start")
 exec("F9", "Stop dictation", "voxtype record stop", { release = true })
-exec("SUPER + CTRL + Z", "Zoom in", "hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float + 1')")
+exec(
+	"SUPER + CTRL + Z",
+	"Zoom in",
+	"hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float + 1')"
+)
 exec("SUPER + CTRL + ALT + Z", "Reset zoom", "hyprctl keyword cursor:zoom_factor 1")
 
 -- Restored local bindings from bindings.conf.bak.1782381293.
@@ -169,9 +213,9 @@ bind("SUPER + CTRL + K", "Resize up", hl.dsp.window.resize({ x = 0, y = -50, rel
 bind("SUPER + CTRL + L", "Resize right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
 
 for i = 1, 10 do
-  local code = 9 + i
-  bind("SUPER + code:" .. code, "Switch workspace " .. i, hl.dsp.focus({ workspace = i }))
-  bind("SUPER + SHIFT + code:" .. code, "Move window to workspace " .. i, hl.dsp.window.move({ workspace = i }))
+	local code = 9 + i
+	bind("SUPER + code:" .. code, "Switch workspace " .. i, hl.dsp.focus({ workspace = i }))
+	bind("SUPER + SHIFT + code:" .. code, "Move window to workspace " .. i, hl.dsp.window.move({ workspace = i }))
 end
 
 bind("SUPER + Tab", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))

@@ -1,5 +1,3 @@
--- Omarchy/default env plus local overrides.
-
 hl.env("XCURSOR_SIZE", "18")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("GDK_BACKEND", "wayland,x11,*")
@@ -16,16 +14,15 @@ hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("LANG", "en_US.UTF-8")
 hl.env("HYPRLAND_NO_SD_NOTIFY", "0")
 
--- NVIDIA environment variables from previous hyprland.conf.
 hl.env("NVD_BACKEND", "direct")
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 
 hl.config({
-  xwayland = {
-    force_zero_scaling = true,
-  },
-  ecosystem = {
-    no_update_news = true,
-  },
+	xwayland = {
+		force_zero_scaling = true,
+	},
+	ecosystem = {
+		no_update_news = true,
+	},
 })

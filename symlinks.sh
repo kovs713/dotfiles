@@ -21,6 +21,7 @@ link() {
 }
 
 link "$DOTFILES/starship.toml" "$CONFIG_DIR/starship.toml"
+link "$DOTFILES/xdg-terminals.list" "$CONFIG_DIR/xdg-terminals.list"
 link "$DOTFILES/.zshrc" "$HOME/.zshrc"
 link "$DOTFILES/.zprofile" "$HOME/.zprofile"
 link "$DOTFILES/.ideavimrc" "$HOME/.ideavimrc"

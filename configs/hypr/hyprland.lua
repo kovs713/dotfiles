@@ -1,10 +1,12 @@
--- Hyprland 0.55+ Lua entrypoint.
--- Files live in ~/dotfiles/configs/hypr and are exposed via ~/.config/hypr.
-
-require("envs")
-require("monitors")
-require("input")
-require("looknfeel")
-require("windows")
-require("autostart")
-require("bindings")
+for _, module in ipairs({
+	"envs",
+	"monitors",
+	"input",
+	"looknfeel",
+	"windows",
+	"autostart",
+	"bindings",
+}) do
+	package.loaded[module] = nil
+	require(module)
+end

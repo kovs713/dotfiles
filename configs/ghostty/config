@@ -3,16 +3,14 @@ config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 
 # Font
 font-family = "CaskaydiaMono Nerd Font"
-font-style = Bold
+font-style-bold = SemiBold
 font-size = 18
 
 # Window
 window-padding-x = 0
 window-padding-y = 0
-adjust-cell-height = 2
 confirm-close-surface=false
 resize-overlay = never
-# background-opacity=0.66
 background-opacity=1
 
 # Cursor styling
