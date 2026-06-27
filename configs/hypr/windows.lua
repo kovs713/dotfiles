@@ -38,7 +38,7 @@ hl.window_rule({
 	name = "file-manager",
 	match = { class = "(org.gnome.Nautilus)$" },
 	float = true,
-	size = { 800, 600 },
+	size = { 1100, 600 },
 })
 
 hl.window_rule({
