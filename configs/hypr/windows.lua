@@ -38,6 +38,15 @@ hl.window_rule({
 	name = "file-manager",
 	match = { class = "(org.gnome.Nautilus)$" },
 	float = true,
+	center = true,
+	size = { 1100, 600 },
+})
+
+hl.window_rule({
+	name = "choose-file",
+	match = { title = "(Choose Files)$" },
+	float = true,
+	center = true,
 	size = { 1100, 600 },
 })
 
@@ -80,14 +89,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "freesmlauncher",
-	match = { class = "(FreesmLauncher)$" },
-	workspace = "3",
-	float = true,
-	size = { 1000, 700 },
-})
-
-hl.window_rule({
 	name = "social-ws5",
 	match = {
 		class = "(discord|Discord|Vesktop|telegram|Telegram|AyuGram|ayugram|org.telegram.desktop|WebCord|webcord)",
@@ -97,11 +98,12 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "sound-control",
-	match = { class = "(org.pulseaudio.pavucontrol)$" },
+	match = { class = "(org.omarchy.wiremix)$" },
 	float = true,
 	center = true,
 	size = { 1160, 630 },
 })
+
 hl.window_rule({
 	name = "qt",
 	match = { class = "(qt.*ct)$" },
