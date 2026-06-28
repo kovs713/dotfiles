@@ -113,6 +113,7 @@ alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// 
 alias oc="opencode"
 alias lua5.1="lua51"
 alias cr="critique"
+alias t="tree -I 'node_modules|target|dist' --gitignore"
 
 # Nvim plugin remove (0.12 vim.pack API)
 nvplrm() {
