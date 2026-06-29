@@ -5,7 +5,7 @@ local function theme_color(name)
 	end
 
 	for line in colors:lines() do
-		local color = line:match("^%s*" .. name .. "%s*=%s*\"#?([%x]+)\"")
+		local color = line:match("^%s*" .. name .. '%s*=%s*"#?([%x]+)"')
 		if color then
 			colors:close()
 			return color
