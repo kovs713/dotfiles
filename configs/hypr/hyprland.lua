@@ -1,16 +1,3 @@
-for _, module in ipairs({
-	"envs",
-	"monitors",
-	"input",
-	"looknfeel",
-	"windows",
-	"autostart",
-	"bindings",
-}) do
-	package.loaded[module] = nil
-	require(module)
-end
-
 package.path = os.getenv("HOME")
 	.. "/.config/?.lua;"
 	.. (os.getenv("OMARCHY_PATH") or (os.getenv("HOME") .. "/.local/share/omarchy"))
@@ -19,10 +6,12 @@ package.path = os.getenv("HOME")
 
 require("default.hypr.omarchy")
 
-require("hypr.monitors")
-require("hypr.input")
-require("hypr.bindings")
-require("hypr.looknfeel")
 require("hypr.autostart")
+require("hypr.envs")
+require("hypr.input")
+require("hypr.looknfeel")
+require("hypr.monitors")
+require("hypr.bindings")
+require("hypr.windows")
 
 require("default.hypr.toggles")

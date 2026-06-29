@@ -29,6 +29,7 @@ for _, keys in ipairs({
 	"SUPER + W",
 	"SUPER + slash",
 	"SUPER + code:61",
+	"SUPER + SHIFT + SPACE",
 	"SUPER + SHIFT + P",
 	"SUPER + CTRL + H",
 	"SUPER + CTRL + L",

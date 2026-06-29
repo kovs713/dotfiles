@@ -1,4 +1,4 @@
--- Omarchy defaults plus local backup entries, without old duplicate services.
+-- Local autostart entries. Omarchy defaults are loaded by default.hypr.omarchy.
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm-app -- hypridle")
