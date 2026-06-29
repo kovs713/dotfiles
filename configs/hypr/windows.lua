@@ -105,6 +105,14 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "bluetooth",
+	match = { class = "(org.omarchy.bluetui)$" },
+	float = true,
+	center = true,
+	size = { 1160, 630 },
+})
+
+hl.window_rule({
 	name = "qt",
 	match = { class = "(qt.*ct)$" },
 	float = true,
