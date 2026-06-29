@@ -16,7 +16,7 @@ Arch + [Omarchy](https://omarchy.org/) + Hyprland scrolling layout + a suspiciou
 | WM | Hyprland (scrolling) |
 | Terminal | Ghostty |
 | Shell | Zsh + Starship |
-| Multiplexer | tmux |
+| Multiplexer | tmux / herdr |
 | Launcher | Walker |
 | Bar | Waybar |
 | Font | CaskaydiaMono Nerd Font |
@@ -49,6 +49,8 @@ bash symlinks.sh
 ## goodies
 
 `scripts/smart-session.sh` — tmux sessionizer via zoxide + fzf. Jump to any project in ~2 keystrokes.
+
+`configs/herdr/config.toml` — Herdr config: `ctrl+space` prefix, hjkl panes, workspace/agent shortcuts, zsh.
 
 `keyboard/` — Vial layout for my 42 keys split (actually it is 56 keys but i use only 42) + udev rules for disabling the internal keyboard when an external one is plugged in.
 

@@ -1,0 +1,71 @@
+# Herdr setup with tmux-ish pane muscle memory.
+onboarding = false
+
+[terminal]
+default_shell = "/bin/zsh"
+shell_mode = "auto"
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+space"
+
+help = "prefix+?"
+settings = "prefix+comma"
+reload_config = "prefix+r"
+
+# Workspaces / agents
+detach = "prefix+q"
+workspace_picker = "prefix+w"
+new_workspace = "prefix+enter"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
+previous_workspace = "prefix+u"
+next_workspace = "prefix+i"
+switch_workspace = "prefix+alt+1..9"
+previous_agent = "prefix+a"
+next_agent = "prefix+f"
+focus_agent = "prefix+ctrl+1..9"
+
+# Tabs
+new_tab = "prefix+c"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+switch_tab = "prefix+1..9"
+rename_tab = "prefix+shift+t"
+close_tab = "prefix+shift+x"
+
+# Panes
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+
+split_vertical = ["prefix+s", "alt+shift+enter"]
+split_horizontal = ["prefix+v", "alt+enter"]
+close_pane = ["prefix+x", "alt+esc"]
+zoom = "prefix+z"
+copy_mode = "prefix+["
+resize_mode = "prefix+shift+r"
+toggle_sidebar = "prefix+b"
+
+[ui]
+mouse_capture = true
+pane_borders = true
+pane_gaps = true
+confirm_close = true
+prompt_new_tab_name = false
+
+[ui.toast]
+delivery = "off"
+
+[ui.sound]
+enabled = false
+
+[theme]
+name = "terminal"
+
+auto_switch = false
+[advanced]
+scrollback_limit_bytes = 2097152

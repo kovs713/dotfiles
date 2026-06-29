@@ -4,6 +4,7 @@ calcure
 checkstyle-bin
 electron39-bin
 elyprismlauncher-bin
+herdr-bin
 librepods-git
 otf-monocraft
 py-mkvenv

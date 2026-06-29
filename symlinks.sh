@@ -34,6 +34,7 @@ for item in \
   hypr \
   kitty \
   swayosd \
+  herdr \
   tmux \
   walker \
   waybar \
