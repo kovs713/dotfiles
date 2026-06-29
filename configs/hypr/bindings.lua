@@ -116,8 +116,6 @@ exec("SUPER + SHIFT + ALT + M", "Music TUI", "omarchy-launch-or-focus-tui cliamp
 exec("SUPER + SHIFT + D", "Docker", "omarchy-launch-tui lazydocker")
 exec("SUPER + SHIFT + O", "Obsidian", 'omarchy-launch-or-focus ^obsidian$ "uwsm-app -- obsidian"')
 
-exec("SUPER + SPACE", "Launch apps", "omarchy-launch-walker")
-exec("SUPER + CTRL + E", "Emoji picker", "omarchy-launch-walker -m symbols")
 exec("SUPER + CTRL + C", "Capture menu", "omarchy-menu capture")
 exec("SUPER + CTRL + O", "Toggle menu", "omarchy-menu toggle")
 exec("SUPER + ALT + SPACE", "Omarchy menu", "omarchy-menu")
