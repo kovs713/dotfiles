@@ -117,6 +117,16 @@ alias lua5.1="lua51"
 alias cr="critique"
 alias t="tree -I 'node_modules|target|dist' --gitignore"
 
+# keyboard build etc
+alias qmkb="qmk compile -kb silakka54 -km vial"
+qmkm() {
+  sudo mkdir -p /mnt/rpi-rp2
+  sudo mount -t vfat /dev/disk/by-label/RPI-RP2 /mnt/rpi-rp2 || return
+  sudo cp ~/qmk_firmware/silakka54_vial.uf2 /mnt/rpi-rp2/ || return
+  sync
+  sudo umount /mnt/rpi-rp2
+}
+
 # Nvim plugin remove (0.12 vim.pack API)
 nvplrm() {
   name="$1"

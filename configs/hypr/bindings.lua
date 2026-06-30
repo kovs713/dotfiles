@@ -41,131 +41,131 @@ end
 exec(
 	"XF86AudioRaiseVolume",
 	"Volume up",
-	"omarchy-swayosd-client --output-volume raise",
+	"omarchy swayosd client --output-volume raise",
 	{ locked = true, repeating = true }
 )
 exec(
 	"XF86AudioLowerVolume",
 	"Volume down",
-	"omarchy-swayosd-client --output-volume lower",
+	"omarchy swayosd client --output-volume lower",
 	{ locked = true, repeating = true }
 )
-exec("XF86AudioMute", "Mute", "omarchy-swayosd-client --output-volume mute-toggle", { locked = true, repeating = true })
-exec("XF86AudioMicMute", "Mute microphone", "omarchy-audio-input-mute", { locked = true, repeating = true })
-exec("XF86MonBrightnessUp", "Brightness up", "omarchy-brightness-display +5%", { locked = true, repeating = true })
-exec("XF86MonBrightnessDown", "Brightness down", "omarchy-brightness-display 5%-", { locked = true, repeating = true })
+exec("XF86AudioMute", "Mute", "omarchy swayosd client --output-volume mute-toggle", { locked = true, repeating = true })
+exec("XF86AudioMicMute", "Mute microphone", "omarchy audio input mute", { locked = true, repeating = true })
+exec("XF86MonBrightnessUp", "Brightness up", "omarchy brightness display +5%", { locked = true, repeating = true })
+exec("XF86MonBrightnessDown", "Brightness down", "omarchy brightness display 5%-", { locked = true, repeating = true })
 exec(
 	"SHIFT + XF86MonBrightnessUp",
 	"Brightness maximum",
-	"omarchy-brightness-display 100%",
+	"omarchy brightness display 100%",
 	{ locked = true, repeating = true }
 )
 exec(
 	"SHIFT + XF86MonBrightnessDown",
 	"Brightness minimum",
-	"omarchy-brightness-display 1%",
+	"omarchy brightness display 1%",
 	{ locked = true, repeating = true }
 )
 exec(
 	"XF86KbdBrightnessUp",
 	"Keyboard brightness up",
-	"omarchy-brightness-keyboard up",
+	"omarchy brightness keyboard up",
 	{ locked = true, repeating = true }
 )
 exec(
 	"XF86KbdBrightnessDown",
 	"Keyboard brightness down",
-	"omarchy-brightness-keyboard down",
+	"omarchy brightness keyboard down",
 	{ locked = true, repeating = true }
 )
-exec("XF86KbdLightOnOff", "Keyboard backlight cycle", "omarchy-brightness-keyboard cycle", { locked = true })
-exec("XF86TouchpadToggle", "Toggle touchpad", "omarchy-toggle-touchpad", { locked = true })
-exec("XF86TouchpadOn", "Enable touchpad", "omarchy-toggle-touchpad on", { locked = true })
-exec("XF86TouchpadOff", "Disable touchpad", "omarchy-toggle-touchpad off", { locked = true })
+exec("XF86KbdLightOnOff", "Keyboard backlight cycle", "omarchy brightness keyboard cycle", { locked = true })
+exec("XF86TouchpadToggle", "Toggle touchpad", "omarchy toggle touchpad", { locked = true })
+exec("XF86TouchpadOn", "Enable touchpad", "omarchy toggle touchpad on", { locked = true })
+exec("XF86TouchpadOff", "Disable touchpad", "omarchy toggle touchpad off", { locked = true })
 exec(
 	"ALT + XF86AudioRaiseVolume",
 	"Volume up precise",
-	"omarchy-swayosd-client --output-volume +1",
+	"omarchy swayosd client --output-volume +1",
 	{ locked = true, repeating = true }
 )
 exec(
 	"ALT + XF86AudioLowerVolume",
 	"Volume down precise",
-	"omarchy-swayosd-client --output-volume -1",
+	"omarchy swayosd client --output-volume -1",
 	{ locked = true, repeating = true }
 )
 exec(
 	"ALT + XF86MonBrightnessUp",
 	"Brightness up precise",
-	"omarchy-brightness-display +1%",
+	"omarchy brightness display +1%",
 	{ locked = true, repeating = true }
 )
 exec(
 	"ALT + XF86MonBrightnessDown",
 	"Brightness down precise",
-	"omarchy-brightness-display 1%-",
+	"omarchy brightness display 1%-",
 	{ locked = true, repeating = true }
 )
-exec("XF86AudioNext", "Next track", "omarchy-swayosd-client --playerctl next", { locked = true })
-exec("XF86AudioPause", "Pause", "omarchy-swayosd-client --playerctl play-pause", { locked = true })
-exec("XF86AudioPlay", "Play", "omarchy-swayosd-client --playerctl play-pause", { locked = true })
-exec("XF86AudioPrev", "Previous track", "omarchy-swayosd-client --playerctl previous", { locked = true })
-exec("SUPER + XF86AudioMute", "Switch audio output", "omarchy-audio-output-switch", { locked = true })
+exec("XF86AudioNext", "Next track", "omarchy swayosd client --playerctl next", { locked = true })
+exec("XF86AudioPause", "Pause", "omarchy swayosd client --playerctl play-pause", { locked = true })
+exec("XF86AudioPlay", "Play", "omarchy swayosd client --playerctl play-pause", { locked = true })
+exec("XF86AudioPrev", "Previous track", "omarchy swayosd client --playerctl previous", { locked = true })
+exec("SUPER + XF86AudioMute", "Switch audio output", "omarchy audio output switch", { locked = true })
 
-exec("SUPER + SHIFT + ALT + M", "Music TUI", "omarchy-launch-or-focus-tui cliamp")
-exec("SUPER + SHIFT + D", "Docker", "omarchy-launch-tui lazydocker")
-exec("SUPER + SHIFT + O", "Obsidian", 'omarchy-launch-or-focus ^obsidian$ "uwsm-app -- obsidian"')
+exec("SUPER + SHIFT + ALT + M", "Music TUI", "omarchy launch or focus tui cliamp")
+exec("SUPER + SHIFT + D", "Docker", "omarchy launch tui lazydocker")
+exec("SUPER + SHIFT + O", "Obsidian", 'omarchy launch or focus ^obsidian$ "uwsm-app -- obsidian"')
 
-exec("SUPER + CTRL + C", "Capture menu", "omarchy-menu capture")
-exec("SUPER + CTRL + O", "Toggle menu", "omarchy-menu toggle")
-exec("SUPER + ALT + SPACE", "Omarchy menu", "omarchy-menu")
-exec("SUPER + Escape", "System menu", "omarchy-menu system")
-exec("XF86PowerOff", "Power menu", "omarchy-menu system", { locked = true })
-exec("SUPER + SHIFT + SPACE", "Toggle top bar", "omarchy-toggle-waybar")
-exec("SUPER + CTRL + SPACE", "Theme background menu", "omarchy-menu background")
-exec("SUPER + SHIFT + CTRL + SPACE", "Theme menu", "omarchy-menu theme")
-exec("SUPER + BACKSPACE", "Toggle window transparency", "omarchy-hyprland-window-transparency-toggle")
-exec("SUPER + SHIFT + BACKSPACE", "Toggle window gaps", "omarchy-hyprland-window-gaps-toggle")
+exec("SUPER + CTRL + C", "Capture menu", "omarchy menu capture")
+exec("SUPER + CTRL + O", "Toggle menu", "omarchy menu toggle")
+exec("SUPER + ALT + SPACE", "Omarchy menu", "omarchy menu")
+exec("SUPER + Escape", "System menu", "omarchy menu system")
+exec("XF86PowerOff", "Power menu", "omarchy menu system", { locked = true })
+exec("SUPER + SHIFT + SPACE", "Toggle top bar", "omarchy toggle waybar")
+exec("SUPER + CTRL + SPACE", "Theme background menu", "omarchy menu background")
+exec("SUPER + SHIFT + CTRL + SPACE", "Theme menu", "omarchy menu theme")
+exec("SUPER + BACKSPACE", "Toggle window transparency", "omarchy hyprland window transparency toggle")
+exec("SUPER + SHIFT + BACKSPACE", "Toggle window gaps", "omarchy hyprland window gaps toggle")
 exec(
 	"SUPER + CTRL + BACKSPACE",
 	"Toggle single-window square aspect",
-	"omarchy-hyprland-window-single-square-aspect-toggle"
+	"omarchy hyprland window single square aspect toggle"
 )
 exec("SUPER + COMMA", "Dismiss last notification", "makoctl dismiss")
 exec("SUPER + SHIFT + COMMA", "Dismiss all notifications", "makoctl dismiss --all")
-exec("SUPER + CTRL + COMMA", "Toggle silencing notifications", "omarchy-toggle-notification-silencing")
+exec("SUPER + CTRL + COMMA", "Toggle silencing notifications", "omarchy toggle notification silencing")
 exec("SUPER + ALT + COMMA", "Invoke last notification", "makoctl invoke")
 exec("SUPER + SHIFT + ALT + COMMA", "Restore last notification", "makoctl restore")
-exec("SUPER + CTRL + I", "Toggle locking on idle", "omarchy-toggle-idle")
-exec("SUPER + CTRL + N", "Toggle nightlight", "omarchy-toggle-nightlight")
-exec("SUPER + CTRL + Delete", "Toggle laptop display", "omarchy-hyprland-monitor-internal toggle")
+exec("SUPER + CTRL + I", "Toggle locking on idle", "omarchy toggle idle")
+exec("SUPER + CTRL + N", "Toggle nightlight", "omarchy toggle nightlight")
+exec("SUPER + CTRL + Delete", "Toggle laptop display", "omarchy hyprland monitor internal toggle")
 exec(
 	"SUPER + CTRL + ALT + Delete",
 	"Toggle laptop display mirroring",
-	"omarchy-hyprland-monitor-internal-mirror toggle"
+	"omarchy hyprland monitor internal mirror toggle"
 )
 exec(
 	"switch:on:Lid Switch",
 	"Laptop display off",
-	"omarchy-hw-external-monitors && omarchy-hyprland-monitor-internal off",
+	"omarchy hw external monitors && omarchy hyprland monitor internal off",
 	{ locked = true }
 )
-exec("switch:off:Lid Switch", "Laptop display on", "omarchy-hyprland-monitor-internal on", { locked = true })
-exec("Print", "Screenshot", "omarchy-capture-screenshot")
-exec("ALT + Print", "Screenrecording", "omarchy-menu screenrecord")
+exec("switch:off:Lid Switch", "Laptop display on", "omarchy hyprland monitor internal on", { locked = true })
+exec("Print", "Screenshot", "omarchy capture screenshot")
+exec("ALT + Print", "Screenrecording", "omarchy menu screenrecord")
 exec("SUPER + Print", "Color picker", "pkill hyprpicker || hyprpicker -a")
-exec("SUPER + CTRL + Print", "OCR screenshot", "omarchy-capture-text-extraction")
-exec("SUPER + CTRL + S", "Share", "omarchy-menu share")
-exec("SUPER + CTRL + PERIOD", "Transcode", "omarchy-transcode")
-exec("SUPER + SHIFT + CTRL + R", "Clear reminders", "omarchy-reminder clear")
-exec("SUPER + CTRL + ALT + R", "Show reminders", "omarchy-reminder show")
+exec("SUPER + CTRL + Print", "OCR screenshot", "omarchy capture text extraction")
+exec("SUPER + CTRL + S", "Share", "omarchy menu share")
+exec("SUPER + CTRL + PERIOD", "Transcode", "omarchy transcode")
+exec("SUPER + SHIFT + CTRL + R", "Clear reminders", "omarchy reminder clear")
+exec("SUPER + CTRL + ALT + R", "Show reminders", "omarchy reminder show")
 exec("SUPER + CTRL + ALT + T", "Show time", "notify-send -u low \"$(date '+%A %H:%M - %d %B %Y - Week %V')\"")
-exec("SUPER + CTRL + ALT + B", "Show battery", 'notify-send -u low "$(omarchy-battery-status)"')
-exec("SUPER + CTRL + ALT + W", "Show weather", 'notify-send -u low "$(omarchy-weather-status)"')
-exec("SUPER + CTRL + A", "Audio controls", "omarchy-launch-audio")
-exec("SUPER + CTRL + B", "Bluetooth controls", "omarchy-launch-bluetooth")
-exec("SUPER + CTRL + W", "Wifi controls", "omarchy-launch-wifi")
-exec("SUPER + CTRL + T", "Activity", "omarchy-launch-tui btop")
+exec("SUPER + CTRL + ALT + B", "Show battery", 'notify-send -u low "$(omarchy battery status)"')
+exec("SUPER + CTRL + ALT + W", "Show weather", 'notify-send -u low "$(omarchy weather status)"')
+exec("SUPER + CTRL + A", "Audio controls", "omarchy launch audio")
+exec("SUPER + CTRL + B", "Bluetooth controls", "omarchy launch bluetooth")
+exec("SUPER + CTRL + W", "Wifi controls", "omarchy launch wifi")
+exec("SUPER + CTRL + T", "Activity", "omarchy launch tui btop")
 exec("SUPER + CTRL + X", "Toggle dictation", "voxtype record toggle")
 exec("F9", "Start dictation", "voxtype record start")
 exec("F9", "Stop dictation", "voxtype record stop", { release = true })
@@ -183,12 +183,12 @@ bind("SUPER + SHIFT + P", "Pin window", hl.dsp.window.pin())
 exec("SUPER + Q", "Terminal", terminal)
 exec("SUPER + D", "Wlr which key", "$HOME/dotfiles/scripts/wlr-which-key-themed.sh")
 exec("SUPER + E", "File manager", "nautilus")
-exec("SUPER + CTRL + P", "Poweroff", "poweroff")
-exec("SUPER + CTRL + R", "Reboot", "reboot")
+exec("SUPER + CTRL + P", "Poweroff", "omarchy system shutdown")
+exec("SUPER + CTRL + R", "Reboot", "omarchy system reboot")
 exec("SUPER + SHIFT + S", "Region capture", "hyprshot -m region --clipboard-only -z -s --cursor=false")
 exec("SUPER + CTRL + SHIFT + S", "Window capture", "hyprshot -m window --clipboard-only -z -s --cursor=false")
-exec("SUPER + V", "Clipboard history", "omarchy-launch-walker -m clipboard")
-exec("SUPER + slash", "Show keybindings", "omarchy-menu-keybindings")
+exec("SUPER + V", "Clipboard history", "omarchy launch walker -m clipboard")
+exec("SUPER + slash", "Show keybindings", "omarchy menu keybindings")
 exec("SUPER + F6", "Suspend", "systemctl suspend")
 exec("SUPER + F12", "Toggle autoclicker", "$HOME/dotfiles/scripts/toggle-clicker.sh")
 

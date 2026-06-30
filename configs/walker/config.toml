@@ -46,4 +46,12 @@ provider = "clipboard"
 
 [[emergencies]]
 text = "Restart Walker"
-command = "omarchy-restart-walker"
+command = "omarchy restart walker"
+
+[[emergencies]]
+text = "Restart"
+command = "omarchy system reboot"
+
+[[emergencies]]
+text = "Shutdown"
+command = "omarchy system shutdown"
