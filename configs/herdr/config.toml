@@ -8,19 +8,18 @@ new_cwd = "follow"
 
 [keys]
 prefix = "ctrl+space"
-
 help = "prefix+?"
 settings = "prefix+comma"
 reload_config = "prefix+r"
 
 # Workspaces / agents
-detach = "prefix+q"
+detach = "prefix+d"
 workspace_picker = "prefix+w"
 new_workspace = "prefix+enter"
 rename_workspace = "prefix+shift+w"
-close_workspace = "prefix+shift+d"
-previous_workspace = "prefix+u"
-next_workspace = "prefix+i"
+close_workspace = "prefix+shift+x"
+previous_workspace = "prefix+i"
+next_workspace = "prefix+o"
 switch_workspace = "prefix+alt+1..9"
 previous_agent = "prefix+a"
 next_agent = "prefix+f"
@@ -32,7 +31,7 @@ previous_tab = "prefix+p"
 next_tab = "prefix+n"
 switch_tab = "prefix+1..9"
 rename_tab = "prefix+shift+t"
-close_tab = "prefix+shift+x"
+close_tab = "prefix+x"
 
 # Panes
 focus_pane_left = "prefix+h"
@@ -44,11 +43,16 @@ cycle_pane_previous = "prefix+shift+tab"
 
 split_vertical = ["prefix+s", "alt+shift+enter"]
 split_horizontal = ["prefix+v", "alt+enter"]
-close_pane = ["prefix+x", "alt+esc"]
-zoom = "prefix+z"
+close_pane = ["prefix+z", "alt+esc"]
 copy_mode = "prefix+["
 resize_mode = "prefix+shift+r"
 toggle_sidebar = "prefix+b"
+
+[[keys.command]]
+key = "prefix+q"
+type = "shell"
+command = "herdr session stop ${HERDR_SESSION:-default}"
+description = "stop current herdr session"
 
 [ui]
 mouse_capture = true
@@ -65,7 +69,7 @@ enabled = false
 
 [theme]
 name = "terminal"
-
 auto_switch = false
+
 [advanced]
 scrollback_limit_bytes = 2097152
