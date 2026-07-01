@@ -68,8 +68,14 @@ delivery = "off"
 enabled = false
 
 [theme]
-name = "terminal"
+name = "vesper"
+
 auto_switch = false
+[theme.custom]
+accent = "#ffaf00"
+red = "#fd6883"
+green = "#adda78"
+yellow = "#ffaf00"
 
 [advanced]
 scrollback_limit_bytes = 2097152
