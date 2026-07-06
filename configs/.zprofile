@@ -9,6 +9,7 @@ export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:/home/kovs/.spicetify
 export _ZO_EXCLUDE_DIRS="$HOME/.local/*:$HOME/Work:/mnt/*"
 export PATH="/home/kovs/.cache/.bun/bin:$PATH"
+export PATH="/root/.bun/bin:$PATH"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
