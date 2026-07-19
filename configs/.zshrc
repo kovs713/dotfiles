@@ -117,6 +117,10 @@ alias lua5.1="lua51"
 alias cr="critique"
 alias t="tree -I 'node_modules|target|dist' --gitignore"
 
+bd() {
+  find "${1:-.}" -type f -exec bat {} + | wl-copy
+}
+
 # keyboard build etc
 alias qmkb="qmk compile -kb silakka54 -km vial"
 qmkm() {
