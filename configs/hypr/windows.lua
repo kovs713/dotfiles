@@ -121,8 +121,8 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "anki",
-	match = { class = "anki" },
-	float = true,
+	match = { class = "anki", initial_class = "User 1 - Anki" },
+	float = false,
 	center = true,
 	workspace = "10 silent",
 })
