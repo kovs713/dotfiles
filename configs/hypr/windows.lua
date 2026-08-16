@@ -126,3 +126,16 @@ hl.window_rule({
 	center = true,
 	workspace = "10 silent",
 })
+
+hl.window_rule({
+	name = "mclauncher",
+	match = { class = "(io.github.elyprismlauncher.ElyPrismLauncher)$" },
+	float = true,
+	center = true,
+})
+
+hl.layer_rule({
+	name = "test",
+	match = { namespace = "^(mague-rc-overlay)$" },
+	screen_share_mode = "omit",
+})

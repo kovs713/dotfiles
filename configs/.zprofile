@@ -1,15 +1,27 @@
 # Environment variables
 export LANG=en_US.UTF-8
-export PHONE_MAC_ADDRESS=A4:C6:F0:C0:7A:54
+
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
 export PNPM_HOME="/home/kovs/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
 export PATH=$PATH:/home/kovs/.spicetify
+
 export _ZO_EXCLUDE_DIRS="$HOME/.local/*:$HOME/Work:/mnt/*"
+
 export PATH="/home/kovs/.cache/.bun/bin:$PATH"
 export PATH="/root/.bun/bin:$PATH"
+
+export PATH="/home/kovs/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/kovs/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# Rust/Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
