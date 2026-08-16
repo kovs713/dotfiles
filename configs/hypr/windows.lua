@@ -134,8 +134,8 @@ hl.window_rule({
 	center = true,
 })
 
-hl.layer_rule({
-	name = "test",
-	match = { namespace = "^(mague-rc-overlay)$" },
-	screen_share_mode = "omit",
-})
+-- hl.layer_rule({
+-- 	name = "test",
+-- 	match = { namespace = "^(mague-rc-overlay)$" },
+-- 	screen_share_mode = "omit",
+-- })
