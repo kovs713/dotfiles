@@ -34,6 +34,7 @@ for _, keys in ipairs({
 	"SUPER + CTRL + H",
 	"SUPER + CTRL + L",
 	"SUPER + CTRL + R",
+	"SUPER + SHIFT + S",
 }) do
 	unbind(keys)
 end
