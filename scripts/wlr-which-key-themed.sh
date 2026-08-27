@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-current_theme_dir="$HOME/.config/omarchy/current/theme"
+current_theme_dir="$HOME/.local/state/omarchy/current/theme"
 config_file="$HOME/.config/wlr-which-key/config.yaml"
 tmp_file="$(mktemp --suffix=.yaml)"
 
@@ -32,7 +32,7 @@ elif [[ -f "$current_theme_dir/colors.toml" ]]; then
 else
   # Fall back to the active theme's own directory (e.g. user-installed themes)
   theme_name="$(cat "$HOME/.local/state/omarchy/current/theme.name" 2>/dev/null || true)"
-  theme_dir="$("$HOME/.local/share/omarchy/bin/omarchy-theme-dir" "$theme_name" 2>/dev/null || true)"
+  theme_dir="$(omarchy-theme-dir "$theme_name" 2>/dev/null || true)"
   if [[ -n "${theme_dir:-}" && -f "$theme_dir/colors.toml" ]]; then
     { gen_colors "$theme_dir/colors.toml"; cat "$config_file"; } > "$tmp_file"
   else

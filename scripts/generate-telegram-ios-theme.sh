@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-theme_name="$(tr -d '\r\n' < "$HOME/.config/omarchy/current/theme.name")"
-colors_file="${3:-$HOME/.config/omarchy/current/theme/colors.toml}"
+state_dir="${OMARCHY_STATE_DIR:-$HOME/.local/state/omarchy/current}"
+theme_name="$(tr -d '\r\n' < "$state_dir/theme.name")"
+colors_file="${3:-$state_dir/theme/colors.toml}"
 out_dir="${1:-$HOME/.config/omarchy/generated/telegram-ios/$theme_name}"
 out_file="${2:-$out_dir/$theme_name-ios.attheme}"
 

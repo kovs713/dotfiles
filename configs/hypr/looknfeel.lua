@@ -1,5 +1,5 @@
 local function theme_color(name)
-	local colors = io.open(os.getenv("HOME") .. "/.config/omarchy/current/theme/colors.toml", "r")
+	local colors = io.open(os.getenv("HOME") .. "/.local/state/omarchy/current/theme/colors.toml", "r")
 	if not colors then
 		return nil
 	end

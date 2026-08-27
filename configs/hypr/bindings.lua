@@ -35,6 +35,7 @@ for _, keys in ipairs({
 	"SUPER + CTRL + L",
 	"SUPER + CTRL + R",
 	"SUPER + SHIFT + S",
+	"SUPER + S",
 }) do
 	unbind(keys)
 end
@@ -42,6 +43,8 @@ end
 exec("SUPER + SHIFT + SPACE", "Toggle top bar", "omarchy toggle waybar")
 exec("SUPER + COMMA", "Dismiss last notification", "makoctl dismiss")
 exec("SUPER + SHIFT + COMMA", "Dismiss all notifications", "makoctl dismiss --all")
+
+bind("SUPER + S", "Toggle pocket workspace", hl.dsp.workspace.toggle_special("scratchpad"))
 
 bind("SUPER + R", "Column wider", hl.dsp.layout("colresize +conf"))
 bind("SUPER + SHIFT + R", "Column narrower", hl.dsp.layout("colresize -conf"))
