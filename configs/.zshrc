@@ -165,3 +165,39 @@ sss() {
 
 alias zapret-config="$HOME/zapret-configs/install.sh"
 alias zapret-utils="$HOME/zapret-configs/utils-zapret.sh"
+
+# skills -> dotfiles auto-sync (ponytail: symlink already captures files, this auto-commits)
+# helper
+_dotfiles_skills_sync() {
+  [ -d "$HOME/dotfiles/agents/skills" ] || return 0
+  for s in "$HOME"/dotfiles/agents/skills/*; do
+    [ -e "$s" ] || continue
+    base=$(basename "$s")
+    [ -e "$HOME/.codex/skills/$base" ] || ln -s "$s" "$HOME/.codex/skills/$base" 2>/dev/null || true
+  done
+  git -C "$HOME/dotfiles" add agents/skills 2>/dev/null
+  if ! git -C "$HOME/dotfiles" diff --cached --quiet 2>/dev/null; then
+    git -C "$HOME/dotfiles" commit -m "feat(skills): auto-sync $1 $2" 2>/dev/null
+    echo "→ dotfiles/agents/skills auto-committed"
+  fi
+}
+skills() {
+  if [ $# -eq 0 ]; then command npx --yes skills; return $?; fi
+  command npx --yes skills "$@"
+  local ret=$?
+  case "$1" in add|a|remove|rm|update|upgrade|experimental_sync) [ $ret -eq 0 ] && _dotfiles_skills_sync "$1" "$2" ;; esac
+  return $ret
+}
+npx() {
+  command npx "$@"
+  local ret=$?
+  local has_skills=0 has_mut=0
+  for arg in "$@"; do
+    [[ "$arg" == "skills" ]] && has_skills=1
+    case "$arg" in add|a|remove|rm|update|upgrade|experimental_sync) has_mut=1 ;; esac
+  done
+  if [ $has_skills -eq 1 ] && [ $has_mut -eq 1 ] && [ $ret -eq 0 ]; then
+    _dotfiles_skills_sync "npx" "skills"
+  fi
+  return $ret
+}

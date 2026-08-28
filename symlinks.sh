@@ -56,4 +56,7 @@ fi
 
 link "$DOTFILES/omarchy/themed" "$CONFIG_DIR/omarchy/themed"
 
+# agents skills — single source of truth (dotfiles/agents/skills -> ~/.agents)
+link "$HOME/dotfiles/agents" "$HOME/.agents"
+
 echo "All symlinks installed successfully"
