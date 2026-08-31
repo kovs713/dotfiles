@@ -34,6 +34,7 @@ for _, keys in ipairs({
 	"SUPER + CTRL + H",
 	"SUPER + CTRL + L",
 	"SUPER + CTRL + R",
+	"SUPER + CTRL + V",
 	"SUPER + SHIFT + S",
 	"SUPER + S",
 }) do
