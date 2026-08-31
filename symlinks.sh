@@ -36,7 +36,6 @@ for item in \
   swayosd \
   herdr \
   tmux \
-  walker \
   wlr-which-key \
   wofi \
   zathura
@@ -44,10 +43,14 @@ do
   link "$DOTFILES/$item" "$CONFIG_DIR/$item"
 done
 
-# Cleanup legacy waybar symlink (Quattro uses omarchy bar)
+# Cleanup legacy symlinks (Quattro uses omarchy bar/menu)
 if [ -L "$CONFIG_DIR/waybar" ] && [ "$(readlink "$CONFIG_DIR/waybar")" = "$DOTFILES/waybar" ]; then
   rm "$CONFIG_DIR/waybar"
   echo "$CONFIG_DIR/waybar legacy symlink removed [DONE]"
+fi
+if [ -L "$CONFIG_DIR/walker" ] && [ "$(readlink "$CONFIG_DIR/walker")" = "$DOTFILES/walker" ]; then
+  rm "$CONFIG_DIR/walker"
+  echo "$CONFIG_DIR/walker legacy symlink removed [DONE]"
 fi
 
 # Only create backgrounds symlink if directory doesn't exist
