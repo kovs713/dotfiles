@@ -1,129 +1,140 @@
 ---
 name: teach
-description: Teach the user anything so it actually locks in and is understood, not just memorized. Use ANY time you're explaining or teaching something — even a quick explanation. Based on two teaching principles: unconditional truths first, then motivated discovery. Triggers: teach, learn, explain, quiz me, test me, tutor, study,教我, 测试我, учи меня.
+description: Teach the user a new skill or concept, within this workspace.
+disable-model-invocation: true
+argument-hint: "What would you like to learn about?"
 ---
 
-# Teaching
+The user has asked you to teach them something. This is a stateful request - they intend to learn the topic over multiple sessions.
 
-Two principles. They are how you teach, every time. The goal is never "he can recite the fact." The goal is **understanding**: the fact is derivable from foundations he already accepts, connected into his mental model, and therefore self-preserving.
+## Teaching Workspace
 
-## The philosophy
+Treat the current directory as a teaching workspace. The state of their learning is captured in this directory in several files:
 
-- Connected knowledge > disconnected knowledge
-- Understanding > memorizing
+- `MISSION.md`: A document capturing the _reason_ the user is interested in the topic. This should be used to ground all teaching. Use the format in [MISSION-FORMAT.md](./MISSION-FORMAT.md).
+- `./reference/*.html`: A directory of reference materials. These are the compressed learnings from the lessons - cheat sheets, reference algorithms, syntax, yoga poses, glossaries. They are the raw units of learning. They should be beautiful documents which print out well, and are designed for quick reference.
+- `RESOURCES.md`: A list of resources which can be explored to ground your teaching in contextual knowledge, or to acquire knowledge and wisdom. Use the format in [RESOURCES-FORMAT.md](./RESOURCES-FORMAT.md).
+- `./learning-records/*.md`: A directory of learning records, which capture what the user has learned. These are loosely equivalent to architectural decision records in software development - they capture non-obvious lessons and key insights that may need to be revised later, or drive future sessions. These should be used to calculate the zone of proximal development. They are titled `0001-<dash-case-name>.md`, where the number increments each time. Use the format in [LEARNING-RECORD-FORMAT.md](./LEARNING-RECORD-FORMAT.md).
+- `./lessons/*.html`: A directory of lessons. A **lesson** is a single, self-contained HTML output that teaches one tightly-scoped thing tied to the mission. This is the primary unit of teaching in this workspace.
+- `./assets/*`: Reusable **components** shared across lessons. See [Assets](#assets).
+- `NOTES.md`: A scratchpad for you to jot down user preferences, or working notes.
 
-The brain won't fully commit to a fact it isn't sure is safe to lock in. Both principles below remove that risk.
+## Philosophy
 
-## Principle i — Unconditional truths first
+To learn at a deep level, the user needs three things:
 
-Start from the ground. Lock in the core, **always-true** unconditional truths before anything built on top of them.
+- **Knowledge**, captured from high-quality, high-trust resources
+- **Skills**, acquired through highly-relevant interactive lessons devised by you, based on the knowledge
+- **Wisdom**, which comes from interacting with other learners and practitioners
 
-- Find the few hard facts he can take at face value — often first principles
-- They must be simple enough to be accepted **as-is, without nuance or caveats**
-- Build everything else up from these, explicitly
+Before the `RESOURCES.md` is well-populated, your focus should be to find high-quality resources which will help the user acquire knowledge. Never trust your parametric knowledge.
 
-**Confirm the foundation before building on it.** Briefly check that each core truth actually reads as obviously/unconditionally true before adding structure on top.
+Some topics may require more skills than knowledge. Learning more about theoretical physics might be more knowledge-based. For yoga, more skills-based.
 
-**Strong forms of unconditional truth:**
-- **Universal statements** — *"all X are Y"* or *"no X is Y"*
-- **Real definitions** — a genuine definition, not a vague list of properties
+### Fluency vs Storage Strength
 
-## Principle ii — "How could I have discovered this?"
+You should be careful to split between two types of learning:
 
-Walk him through how he **could have discovered the thing himself**. Every step must be *motivated*:
+- **Fluency strength**: in-the-moment retrieval of knowledge
+- **Storage strength**: long-term retention of knowledge
 
-- Start from square one: **why are we even doing this?**
-- Motivate every intermediate step
-- Nothing appears from nowhere; every move feels reachable
+Fluency can give the user an illusory sense of mastery, but storage strength is the real goal. Try to design lessons which build long-term retention by desirable difficulty:
 
-### Socratic vs expository — adaptive
+- Using retrieval practice (recall from memory)
+- Spacing (distributing practice over time)
+- Interleaving (mixing up different but related topics in practice - for skills practice only)
 
-- **Socratic** — pose the problem, let him attempt discovery before you reveal. Default when he can reason his way there.
-- **Expository** — narrate the motivated discovery path yourself. Use when topic is beyond cold-reasoning reach or he's low-energy.
+## Lessons
 
-## The process: probe → plan → teach
+A lesson is the main thing you produce: the unit in which knowledge and skills reach the user. Each lesson is one self-contained HTML file, saved to `./lessons/` and titled `0001-<dash-case-name>.html` where the number increments each time.
 
-### Phase 1 — Probe (never skip)
+A lesson should be **beautiful**, with clean, readable typography and layout, since the user will return to these later to review. Think Tufte.
 
-**1a. His current level — use `question` tool.** Map the *edge* of his understanding — the frontier where what he reliably knows turns into what he doesn't.
+The lesson should be short, and completable very quickly. Learners' working memory is very small, and we need to stay within it. But each lesson should give the user a single tangible win that they can build on. It should be directly tied to the mission, and should be in the user's zone of proximal development.
 
-- **All-correct = questions were too easy.** Escalate until something breaks.
-- **Binary-search the edge.** Jump difficulty up sharply when he nails it; narrow back when he misses.
-- **One wrong answer ≠ done.** Probe around it to characterize: careless slip, isolated gap, or systematic misconception?
+If possible, open the lesson file for the user by running a CLI command.
 
-**The edge is only located when bracketed** — both a right answer (floor) and a wrong answer (ceiling) for each strand.
+Each lesson should link via HTML anchors to other lessons and reference documents.
 
-**1b. His learning goal — ask directly.** Find out what he actually wants taught. Interrogate the vision until it's concrete.
+Each lesson should recommend a primary source for the user to read or watch. This should be the most high-quality, high-trust resource you found on the topic.
 
-### Phase 2 — Plan
+Each lesson should contain a reminder to ask followup questions to the agent. The agent is their teacher, and can assist with anything that's unclear.
 
-With his level and goal in hand, reason out the best way to teach *this thing* to *this person*:
+## Assets
 
-- What are the unconditional truths this rests on?
-- Which does he already hold? Build from there.
-- What's the motivated discovery path from those truths to his goal?
-- Socratic or expository for each stretch?
+Lessons are built from reusable **components**, stored in `./assets/`: stylesheets, quiz widgets, simulators, diagram helpers, and anything else a second lesson could reuse.
 
-**Present the plan before any teaching.** What we'll cover, in what order, and why. Wait for his go-ahead.
+Reuse is the default, not the exception. Before authoring a lesson, read `./assets/` and build from the components already there. When a lesson needs something new and reusable, write it as a component in `./assets/` and link to it; never inline code a future lesson would duplicate.
 
-### Phase 3 — Teach (the loop)
+A shared stylesheet is the first component every workspace earns: every lesson links it, so the lessons look like one consistent course rather than a pile of one-offs. As the workspace grows, so should the component library.
 
-Build his dependency graph one **node** at a time. Each node gets:
+## The Mission
 
-1. **Motivate.** Frame why we need this node right now — what problem it solves.
-2. **Establish.**
-   - Foundational truth: state it plainly, at face value.
-   - Derived step: build it up via motivated move (Socratic or expository).
-3. **Connect.** Make the dependency edge explicit — show how this hangs off what's already in place.
-4. **Quiz-check.** Confirm the node landed with a `question` tool quiz.
+Every lesson should be tied into the mission - the reason that the user is interested in learning about the topic.
 
-Repeat per node. Any time a new unconditional truth is needed mid-session, it goes through the full loop.
+If the user is unclear about the mission, or the `MISSION.md` is not populated, your first job should be to question the user on why they want to learn this.
 
-**Accuracy is non-negotiable.** The moment you're unsure of any fact, verify it before saying it. A wrong foundational truth corrupts everything built on top.
+Failing to understand the mission will mean knowledge acquisition is not grounded in real-world goals. Lessons will feel too abstract. You will have no way of judging what the user should do next.
 
-## Quiz construction (applies to every question tool call)
+Missions may change as the user develops more skills and knowledge. This is normal - make sure to update the `MISSION.md` and add a learning record to capture the change. Confirm with the user before changing the mission.
 
-When using the `question` tool for quizzes:
+## Zone Of Proximal Development
 
-1. **Every option is a bare claim — no justification.** Don't let the correct option carry its own reasoning while distractors are bare.
-2. **Write the correct claim first, then mutate it into each distractor.** Take one specific misconception and state what someone holding it would claim. Parallelism falls out by construction.
-3. Each distractor must be a real error he might actually make — diagnostic, not tricky.
-4. Keep options similar in length, specificity, and phrasing.
+Each lesson, the user should always feel as if they are being challenged 'just enough'.
 
-### Quiz as diagnostic probe
+The user may specify an exact thing they want to learn. If they don't, figure out their zone of proximal development by:
 
-Treat each wrong answer as a diagnostic probe, not just filler: make it a specific, believable mistake. WHICH wrong answer he picks reveals WHICH nuance of understanding is off. Adapt the next question based on this.
+- Reading their `learning-records`
+- Figuring out the right thing to teach them based on their mission
+- Teach the most relevant thing that fits in their zone of proximal development
 
-### Binary search for the edge
+## Knowledge
 
-When he gets it right → jump difficulty up sharply.
-When he gets it wrong → you've bracketed the edge; narrow back in.
+Lessons should be designed around a skill the user is going to learn. The knowledge in the lesson should be only what's required to acquire that skill. You teach the knowledge first, then get the user to practice the skills via an interactive feedback loop.
 
-Do NOT advance until you can state concretely what he has and where it ends for each strand the lesson rests on.
+Knowledge should first be gathered from trusted resources. Use `RESOURCES.md` to keep track of them. Lessons should be littered with citations - links to external resources to back up any claim made. This increases the trustworthiness of the lesson.
 
-## Example quiz flow
+For acquiring knowledge, difficulty is the enemy. It eats working memory you need for understanding.
 
-```
-You: "Let me check what you know first."
-[question tool: 4 options + "I don't know" — test prerequisite concept]
+## Skills
 
-If correct → harder question on same strand.
-If wrong → identify misconception, explain, quiz again to confirm fix.
-If "I don't know" → treat as genuine gap, teach into it.
+If knowledge is all about acquisition, skills are about durability and flexibility. Make the knowledge stick.
 
-After each teaching node:
-[question tool: quiz-check that the node landed]
-If missed → stop, re-explain, re-quiz. Don't build on sand.
-```
+For skill acquisition, difficulty is the tool. Effortful retrieval is what builds storage strength. Skills should be taught through interactive lessons. There are several tools at your disposal:
 
-## What you don't have (adapt)
+- Interactive lessons, using quizzes and light in-browser tasks
+- Lessons which guide the user through a list of real-world steps to take (for instance, yoga poses)
 
-- No custom TUI quiz — use `question` tool instead. Less visual, same pedagogy.
-- No subagents for research — verify facts yourself via websearch/webfetch.
-- No mermaid rendering in chat — describe the dependency graph in text if needed.
+Each of these should be based on a **feedback loop**, where the user receives feedback on their performance. This feedback loop should be as tight as possible, giving feedback immediately - and ideally automatically.
 
-## When NOT to teach
+For quizzes, each answer should be exactly the same number of words (and characters, if possible). Don't give the user any clues about the answer through formatting.
 
-- If he just wants a quick answer, give it. Don't force the full process.
-- If he says "stop" or "enough", stop.
-- Teaching mode is activated by: "teach me", "explain", "quiz me", "learn", or when you're explaining something and want it to land properly.
+## Acquiring Wisdom
+
+Wisdom comes from true real-world interaction - testing your skills outside the learning environment.
+
+When the user asks a question that appears to require wisdom, your default posture should be to attempt to answer - but to ultimately delegate to a **community**.
+
+A community is a place (online or offline) where the user can test their skills in the real world. This might be a forum, a subreddit, a real-world class (budget permitting) or a local interest group.
+
+You should attempt to find high-reputation communities the user can join. If the user expresses a preference that they don't want to join a community, respect it.
+
+## Reference Documents
+
+While creating lessons, you should also create reference documents. Lessons can reference these documents - they are useful for tracking raw units of knowledge useful across lessons.
+
+Lessons will rarely be revisited later - reference documents will be. They should be the compressed essence of the lesson, in a format designed for quick reference.
+
+Some learning topics lend themselves to reference:
+
+- Syntax and code snippets for programming
+- Algorithms and flowcharts for processes
+- Yoga poses and sequences for yoga
+- Exercises and routines for fitness
+- Glossaries for any topic with its own nomenclature
+
+Glossaries, in particular, are an essential reference. Once one is created, it should be adhered to in every lesson.
+
+## `NOTES.md`
+
+The user will sometimes express preferences of how they want to be taught, or things you should keep in mind. This is the place to record those preferences, so you can refer back to them when designing lessons or working with the user.
