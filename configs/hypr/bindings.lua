@@ -40,7 +40,7 @@ for _, keys in ipairs({
 	unbind(keys)
 end
 
-exec("SUPER + SHIFT + SPACE", "Toggle top bar", "omarchy toggle waybar")
+exec("SUPER + SHIFT + SPACE", "Toggle top bar", "omarchy toggle bar")
 exec("SUPER + COMMA", "Dismiss last notification", "makoctl dismiss")
 exec("SUPER + SHIFT + COMMA", "Dismiss all notifications", "makoctl dismiss --all")
 
