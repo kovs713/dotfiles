@@ -117,6 +117,23 @@ alias lua5.1="lua51"
 alias cr="critique"
 alias t="tree -I 'node_modules|target|dist' --gitignore"
 
+ytchunks() {
+    if [ -z "$1" ]; then
+        echo 'usage: ytchunks "youtube-url"'
+        return 1
+    fi
+
+    yt-dlp \
+        -x --audio-format mp3 \
+        --embed-thumbnail --add-metadata \
+        --split-chapters \
+        -o "chapter:$HOME/Music/%(title)s/%(section_title)s.%(ext)s" \
+        --paths "temp:$HOME/Music/.ytchunks_tmp" \
+        -o "$HOME/Music/.ytchunks_tmp/%(title)s.%(ext)s" \
+        --exec "rm -f {}" \
+        "$1"
+}
+
 bd() {
   find "${1:-.}" -type f -exec bat {} + | wl-copy
 }
