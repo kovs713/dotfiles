@@ -123,15 +123,31 @@ ytchunks() {
         return 1
     fi
 
+    local tmp="$HOME/Music/.ytchunks_tmp"
+
+    local title
+    title=$(yt-dlp --print "%(title)s" --skip-download "$1")
+
     yt-dlp \
         -x --audio-format mp3 \
-        --embed-thumbnail --add-metadata \
+        --embed-thumbnail \
         --split-chapters \
         -o "chapter:$HOME/Music/%(title)s/%(section_title)s.%(ext)s" \
-        --paths "temp:$HOME/Music/.ytchunks_tmp" \
-        -o "$HOME/Music/.ytchunks_tmp/%(title)s.%(ext)s" \
-        --exec "rm -f {}" \
+        -o "$tmp/%(title)s.%(ext)s" \
         "$1"
+
+    rm -f "$tmp/$title.mp3" "$tmp/$title.webp" "$tmp/$title.png"
+
+    local dir="$HOME/Music/$title"
+    for f in "$dir"/*.mp3; do
+        local t
+        t=$(basename "$f" .mp3)
+        ffmpeg -y -i "$f" -map 0 -map_metadata -1 -c copy \
+            -metadata title="$t" "$f.tmp.mp3" \
+            && mv "$f.tmp.mp3" "$f"
+    done
+
+    echo "done: $dir"
 }
 
 bd() {
