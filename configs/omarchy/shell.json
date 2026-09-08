@@ -1,0 +1,100 @@
+{
+  "bar": {
+    "centerAnchor": "omarchy.clock",
+    "layout": {
+      "center": [
+        {
+          "id": "omarchy.indicators"
+        },
+        {
+          "id": "omarchy.monitor"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.clock",
+          "format": "ddd d MMM HH:mm",
+          "formatAlt": "d MMMM 'W'ww yyyy",
+          "verticalFormat": "HH\n—\nmm"
+        },
+        {
+          "id": "omarchy.weather"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "techywilbur.pomodoro"
+        },
+        {
+          "id": "omarchy.system-update"
+        }
+      ],
+      "left": [
+        {
+          "id": "io.github.thisisgm.omapods",
+          "hideWhenDisconnected": false
+        },
+        {
+          "id": "countless.osu-typing-sounds"
+        },
+        {
+          "id": "omarchy.agents"
+        },
+        {
+          "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.power"
+        },
+        {
+          "id": "io.github.villainru.panel-resources",
+          "enabledMetrics": {
+            "cpu.frequency": false,
+            "cpu.load": false,
+            "cpu.temp": false,
+            "disk.root": false,
+            "gpu.temp": false,
+            "memory.ram": true,
+            "memory.swap": false,
+            "gpu.load": false
+          }
+        },
+        {
+          "id": "kb.system-pulse",
+          "iconOnly": true
+        }
+      ],
+      "right": [
+        {
+          "id": "omarchy.tray"
+        },
+        {
+          "id": "omarchy.workspaces"
+        },
+        {
+          "id": "io.github.koenhendriks.menu-calculator"
+        }
+      ]
+    },
+    "position": "bottom",
+    "transparent": false,
+    "id": "omarchy.bar"
+  },
+  "idle": {
+    "lock": 3000,
+    "screensaver": 1500
+  },
+  "plugins": [],
+  "version": 1,
+  "disabledPlugins": [
+    "omarchy.menu"
+  ],
+  "cloneSourceRestores": [
+    "io.github.koenhendriks.menu-calculator"
+  ]
+}
