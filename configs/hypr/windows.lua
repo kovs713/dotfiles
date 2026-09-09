@@ -97,6 +97,18 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "ayugram-scratchpad",
+	match = {
+		class = "(AyuGram|ayugram|com.ayugram.desktop|org.telegram.desktop)",
+		workspace = "special:scratchpad",
+	},
+	workspace = "special:scratchpad silent",
+	float = true,
+	size = { 1800, 950 },
+	move = "60 60",
+})
+
+hl.window_rule({
 	name = "sound-control",
 	match = { class = "(org.omarchy.wiremix)$" },
 	float = true,
