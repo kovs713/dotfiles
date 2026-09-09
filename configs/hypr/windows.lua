@@ -91,7 +91,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "social-ws5",
 	match = {
-		class = "(discord|Discord|Vesktop|telegram|Telegram|AyuGram|ayugram|org.telegram.desktop|WebCord|webcord)",
+		class = "(discord|Discord|Vesktop|WebCord|webcord)",
 	},
 	workspace = "5 silent",
 })
