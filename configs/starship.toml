@@ -3,6 +3,7 @@
 add_newline = true
 
 command_timeout = 2000
+scan_timeout = 200
 
 format = """
 $directory\
@@ -13,12 +14,7 @@ $git_metrics\
 $git_state\
 $c\
 $rust\
-$golang\
 $nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
 $python\
 $package\
 $docker_context\
