@@ -29,7 +29,7 @@ hl.device({
 
 hl.device({
 	name = "squalius-cephalus-silakka54",
-	kb_options = "grp:alt_space_toggle",
+	kb_options = "grp:alt_space_toggle,grp:menu_toggle",
 })
 
 hl.window_rule({
