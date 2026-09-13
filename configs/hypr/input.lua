@@ -1,7 +1,8 @@
 hl.config({
 	input = {
 		kb_layout = "us,ru",
-		kb_options = "grp:alt_space_toggle,caps:escape",
+		-- kb_options = "grp:alt_space_toggle,caps:escape",
+		kb_options = "grp:alt_space_toggle",
 		repeat_rate = 40,
 		repeat_delay = 600,
 		numlock_by_default = true,
@@ -19,6 +20,16 @@ hl.device({
 	name = "pnp0c50:00-04f3:31ff-touchpad",
 	sensitivity = 0.4,
 	accel_profile = "flat",
+})
+
+hl.device({
+	name = "royuan-akko-multi-modes-keyboard-b",
+	kb_options = "grp:alt_space_toggle,caps:escape",
+})
+
+hl.device({
+	name = "squalius-cephalus-silakka54",
+	kb_options = "grp:alt_space_toggle",
 })
 
 hl.window_rule({

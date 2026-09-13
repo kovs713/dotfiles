@@ -158,11 +158,22 @@ bd() {
 # keyboard build etc
 alias qmkb="qmk compile -kb silakka54 -km vial"
 qmkm() {
-  sudo mkdir -p /mnt/rpi-rp2
-  sudo mount -t vfat /dev/disk/by-label/RPI-RP2 /mnt/rpi-rp2 || return
-  sudo cp ~/qmk_firmware/silakka54_vial.uf2 /mnt/rpi-rp2/ || return
-  sync
-  sudo umount /mnt/rpi-rp2
+  while [ ! -e /dev/disk/by-label/RPI-RP2 ]; do
+    sleep 0.5; 
+  done;
+  sudo cp ~/qmk_firmware/silakka54_vial.uf2 /run/media/$USER/RPI-RP2/ 2>/dev/null || {
+    sudo mkdir -p /mnt/rpi-rp2 && 
+    sudo mount /dev/disk/by-label/RPI-RP2 /mnt/rpi-rp2 &&
+    sudo cp ~/qmk_firmware/silakka54_vial.uf2 /mnt/rpi-rp2/ &&
+    sync &&
+    sudo umount /mnt/rpi-rp2;
+  };
+  echo DONE
+#  sudo mkdir -p /mnt/rpi-rp2
+#  sudo mount -t vfat /dev/disk/by-label/RPI-RP2 /mnt/rpi-rp2 || return
+#  sudo cp ~/qmk_firmware/silakka54_vial.uf2 /mnt/rpi-rp2/ || return
+#  sync
+#  sudo umount /mnt/rpi-rp2
 }
 
 # Nvim plugin remove (0.12 vim.pack API)

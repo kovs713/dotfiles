@@ -4,6 +4,7 @@
 enum custom_keycodes {
     SYM = SAFE_RANGE,
     NAV,
+    GRV_CAPS,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -16,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         KC_TAB,   KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,                                   KC_Y,        KC_U,         KC_I,         KC_O,         KC_P,            KC_LBRC,
         KC_ESC,   LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D), LCTL_T(KC_F), KC_G,                                   KC_H,        RCTL_T(KC_J), RSFT_T(KC_K), RALT_T(KC_L), RGUI_T(KC_SCLN), KC_QUOT,
-        KC_GRV,   KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,                                   KC_N,        KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,         KC_BSLS,
+        GRV_CAPS,   KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,                                   KC_N,        KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,         KC_BSLS,
 
                                                         NAV,       SYM,       KC_SPC,          KC_ENT,    KC_BSPC,     KC_DEL
     ),
@@ -66,10 +67,22 @@ static void send_layer_key_event(uint8_t layer, bool pressed) {
     uint8_t data[32] = {0};
 
     data[0] = 0x4C;              // 'L' = layer key event
-    data[1] = layer;             // 1 или 2
+    data[1] = layer;             // 1 or 2
     data[2] = pressed ? 1 : 0;   // 1 press, 0 release
 
     host_raw_hid_send(data, sizeof(data));
+}
+
+static uint16_t grv_timer;
+static uint16_t grv_wait_time;
+static bool grv_waiting;
+static bool grv_second;
+
+void matrix_scan_user(void) {
+    if (grv_waiting && timer_elapsed(grv_wait_time) > CAPS_DELAY) {
+        grv_waiting = false;
+        tap_code(KC_GRV); // single tap, no second tap
+    }
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -91,6 +104,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 layer_off(2);
                 send_layer_key_event(2, false);
+            }
+            return false;
+
+        case GRV_CAPS:
+            if (record->event.pressed) {
+                if (grv_waiting && timer_elapsed(grv_wait_time) < CAPS_DELAY) {
+                    grv_waiting = false;
+                    grv_second = true;
+                } else {
+                    grv_waiting = false;
+                    grv_second = false;
+                    grv_timer = timer_read();
+                }
+            } else {
+                if (grv_second) {
+                    tap_code(KC_CAPS); // fast double tap
+                    grv_second = false;
+                } else if (timer_elapsed(grv_timer) < CAPS_DELAY) {
+                    grv_waiting = true;
+                    grv_wait_time = timer_read(); // wait for a second tap
+                } else {
+                    tap_code(KC_GRV); // long single hold = just `
+                }
             }
             return false;
     }
