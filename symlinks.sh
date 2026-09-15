@@ -44,16 +44,6 @@ do
   link "$DOTFILES/$item" "$CONFIG_DIR/$item"
 done
 
-# Cleanup legacy symlinks (Quattro uses omarchy bar/menu)
-if [ -L "$CONFIG_DIR/waybar" ] && [ "$(readlink "$CONFIG_DIR/waybar")" = "$DOTFILES/waybar" ]; then
-  rm "$CONFIG_DIR/waybar"
-  echo "$CONFIG_DIR/waybar legacy symlink removed [DONE]"
-fi
-if [ -L "$CONFIG_DIR/walker" ] && [ "$(readlink "$CONFIG_DIR/walker")" = "$DOTFILES/walker" ]; then
-  rm "$CONFIG_DIR/walker"
-  echo "$CONFIG_DIR/walker legacy symlink removed [DONE]"
-fi
-
 # Only create backgrounds symlink if directory doesn't exist
 if [ ! -e "$CONFIG_DIR/omarchy/backgrounds" ]; then
   mkdir -p "$CONFIG_DIR/omarchy"
@@ -64,6 +54,8 @@ else
 fi
 
 link "$DOTFILES/omarchy/themed" "$CONFIG_DIR/omarchy/themed"
+
+link "$DOTFILES/omarchy/shell.json" "$CONFIG_DIR/omarchy/shell.json"
 
 # agents skills — single source of truth (dotfiles/agents/skills -> ~/.agents)
 link "$HOME/dotfiles/agents" "$HOME/.agents"

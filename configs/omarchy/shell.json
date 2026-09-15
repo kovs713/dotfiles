@@ -14,8 +14,7 @@
         },
         {
           "id": "omarchy.clock",
-          "format": "ddd d MMM HH:mm",
-          "formatAlt": "d MMMM 'W'ww yyyy",
+          "format": "dddd d MMM hh:mm:ss",
           "verticalFormat": "HH\n—\nmm"
         },
         {
@@ -91,10 +90,6 @@
   },
   "plugins": [],
   "version": 1,
-  "disabledPlugins": [
-    "omarchy.menu"
-  ],
-  "cloneSourceRestores": [
-    "io.github.koenhendriks.menu-calculator"
-  ]
+  "disabledPlugins": ["omarchy.menu"],
+  "cloneSourceRestores": ["io.github.koenhendriks.menu-calculator"]
 }
