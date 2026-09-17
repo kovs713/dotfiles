@@ -5,8 +5,9 @@
 local share = 1.0
 
 -- open AyuGram if scratchpad is empty. Safe: move only AyuGram, not active window.
-local seed =
-	'sh -c \'hyprctl eval "for _,w in ipairs(hl.get_windows()) do if w.class==\\"com.ayugram.desktop\\" or w.class==\\"AyuGram\\" or w.class==\\"org.telegram.desktop\\" then hl.dispatch(hl.dsp.focus({window=w.address})); hl.dispatch(hl.dsp.window.move({workspace=\\"special:scratchpad\\"})); break end end" 2>/dev/null; pgrep -x AyuGram >/dev/null || hyprctl eval "hl.exec_cmd(\\"AyuGram\\", {workspace=\\"special:scratchpad silent\\"})"\''
+-- local seed =
+-- 	'sh -c \'hyprctl eval "for _,w in ipairs(hl.get_windows()) do if w.class==\\"com.ayugram.desktop\\" or w.class==\\"AyuGram\\" or w.class==\\"org.telegram.desktop\\" then hl.dispatch(hl.dsp.focus({window=w.address})); hl.dispatch(hl.dsp.window.move({workspace=\\"special:scratchpad\\"})); break end end" 2>/dev/null; pgrep -x AyuGram >/dev/null || hyprctl eval "hl.exec_cmd(\\"AyuGram\\", {workspace=\\"special:scratchpad silent\\"})"\''
+local seed = ""
 
 -- Dimming only applies while a special workspace is open, so the console gets
 -- its separation from the workspace underneath without costing anything the

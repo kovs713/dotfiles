@@ -21,10 +21,10 @@
           "id": "omarchy.weather"
         },
         {
-          "id": "omarchy.keyboard-layout"
+          "id": "techywilbur.pomodoro"
         },
         {
-          "id": "techywilbur.pomodoro"
+          "id": "omarchy.keyboard-layout"
         },
         {
           "id": "omarchy.system-update"
@@ -90,6 +90,10 @@
   },
   "plugins": [],
   "version": 1,
-  "disabledPlugins": ["omarchy.menu"],
-  "cloneSourceRestores": ["io.github.koenhendriks.menu-calculator"]
+  "disabledPlugins": [
+    "omarchy.menu"
+  ],
+  "cloneSourceRestores": [
+    "io.github.koenhendriks.menu-calculator"
+  ]
 }
