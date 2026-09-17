@@ -3,6 +3,7 @@
   "logo": {
     "type": "kitty-icat",
     "source": "$HOME/dotfiles/screenshots/trollface.png",
+    "width": 50,
     "padding": {
       "right": 6
     }
