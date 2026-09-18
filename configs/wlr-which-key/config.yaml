@@ -34,12 +34,12 @@ menu:
   #   x ]
 
   - key: "w"
-    desc: "AmneziaVPN"
-    cmd: "AmneziaVPN"
-
-  - key: "s"
     desc: "Zen"
     cmd: "zen-browser"
+
+  - key: "s"
+    desc: "AmneziaVPN"
+    cmd: "AmneziaVPN"
 
   - key: "x"
     desc: "Zathura"

@@ -105,11 +105,28 @@ alias v="nvim"
 alias m="NVIM_APPNAME=nvim-minimal nvim"
 alias vim="nvim"
 alias vi="\vim"
-alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
+tn() {
+    local target_dir="${1:-$PWD}"
+    local session_name=$(basename "$target_dir")
+
+    if [ -n "$TMUX" ]; then
+        if tmux has-session -t "$session_name" 2>/dev/null; then
+            tmux switch-client -t "$session_name"
+        else
+            tmux new-session -d -s "$session_name" -c "$target_dir"
+            tmux switch-client -t "$session_name"
+        fi
+    else
+        if tmux has-session -t "$session_name" 2>/dev/null; then
+            tmux attach-session -t "$session_name"
+        else
+            tmux new-session -s "$session_name" -c "$target_dir"
+        fi
+    fi
+}
+
 alias ta="tmux attach"
-alias he="herdr"
-# alias ss="$HOME/dotfiles/scripts/smart-tmux-session.sh"
-# alias hss="$HOME/dotfiles/scripts/smart-herdr-session.sh"
+alias sst="$HOME/dotfiles/scripts/smart-tmux-session.sh"
 alias rmsw="rm ~/.local/state/nvim/swap/*.swp 2>/dev/null"
 alias tr="tree -L 1 --dirsfirst"
 alias rmspaces="for f in *; do [[ -f '$f' && '$f' == *' '* ]] && mv '$f' '${f// /_}'; done"
@@ -203,7 +220,7 @@ nvplrm() {
 }
 
 # Zoxide shortcut
-sss() {
+ssz() {
     local dir
     dir="$(zoxide query -l | fzf)" && cd "$dir"
 }
