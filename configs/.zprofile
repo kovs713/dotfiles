@@ -26,6 +26,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # NVM
 export NVM_DIR="$HOME/.nvm"
 
+# Doom Emacs
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
 nvm() {
   unset -f nvm node npm npx 2>/dev/null
   [ -s "$NVM_SOURCE" ] && . "$NVM_SOURCE"

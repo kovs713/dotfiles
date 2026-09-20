@@ -60,4 +60,7 @@ link "$DOTFILES/omarchy/shell.json" "$CONFIG_DIR/omarchy/shell.json"
 # agents skills — single source of truth (dotfiles/agents/skills -> ~/.agents)
 link "$HOME/dotfiles/agents" "$HOME/.agents"
 
+# doom emacs
+link "$DOTFILES/doom" "$HOME/.doom.d"
+
 echo "All symlinks installed successfully"
