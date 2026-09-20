@@ -61,6 +61,6 @@ link "$DOTFILES/omarchy/shell.json" "$CONFIG_DIR/omarchy/shell.json"
 link "$HOME/dotfiles/agents" "$HOME/.agents"
 
 # doom emacs
-link "$DOTFILES/doom" "$HOME/.doom.d"
+link "$HOME/dotfiles/doom-emacs" "$CONFIG_DIR/doom"
 
 echo "All symlinks installed successfully"
