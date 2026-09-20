@@ -5,61 +5,60 @@
        ;; layout
 
        :completion
-       company           ; автодополнение (аналог blink.cmp, но для текста)
-       ;; helm           ; можно включить вместо vertico, если нравится старый стиль
-       vertico           ; быстрый fuzzy-finder (аналог Snacks.picker / Telescope)
+       company           ; blink.cmp completion alternative
+       vertico           ; fuzzy-finder
+       ;; helm           ; vertico alternative 
 
        :ui
-       doom              ; тема и базовый UI
-       doom-dashboard    ; стартовый экран
-       doom-quit         ; подтверждение выхода
-       hl-todo           ; подсветка TODO, NOTE, HACK (как в mini.nvim)
+       doom              ; base ui
+       doom-dashboard    ; startup dashboard
+       ;; doom-quit      ; quit confirm
+       ;; (emoji +unicode)
+       hl-todo           ; TODO, NOTE, HACK highlight
        ;; hydra
        ;; indent-guides
        ;; ligatures
        ;; minimap
-       modeline          ; аналог mini.statusline + lualine
-       nav-flash         ; аналог flash.nvim (подсветка после прыжка)
-       ;; neotree           ; если хочешь дерево слева, но лучше treemacs
-       ophints           ; подсветка областей (как visual mode hints)
-       (popup +defaults) ; всплывающие окна (документация и т.д.)
+       modeline          ; mini.statusline + lualine alternative
+       ophints           ; visual mode hints
+       (popup +defaults) ; popup windows (docs etc.)
        ;; tabs
-       treemacs          ; файловый менеджер (аналог oil.nvim / netrw)
+       treemacs          ; oil.nvim alternative
        ;; unicode
-       vc-gutter         ; аналог gitsigns.nvim
-       vi-tilde-fringe   ; тильды на пустых строках
-       window-select     ; аналог snacks window picker (ace-window)
-       workspaces        ; аналог harpoon / сессий
+       vc-gutter         ; gitsigns.nvim alternative
+       vi-tilde-fringe   ; empty line tildes
+       window-select     ; snacks window picker alternative
+       workspaces        ; harpoon kinda
        ;; zen
 
        :editor
-       (evil +everywhere); уже включен по умолчанию, но оставим для ясности
-       file-templates    ; шаблоны новых файлов
-       fold              ; сворачивание кода/текста
-       (format +onsave)  ; аналог conform.nvim
+       (evil +everywhere); evil (vim) mode
+       file-template
+       fold
+       (format +onsave)  ; conform.nvim kinda
        ;; god
        ;; lispy
-       ;; multiple-cursors ; мультикурсор
+       ;; multiple-cursors
        ;; objed
        ;; parinfer
        ;; rotate
-       snippets          ; аналог luasnip (использует yasnippet)
+       snippets          ; luasnip alternative
        ;; word-wrap
 
        :emacs
-       dired             ; встроенный менеджер файлов (можно использовать вместо treemacs)
-       electric          ; умное закрытие скобок/кавычек
-       undo              ; аналог undotree (undo-fu)
-       vc                ; version control интеграция
+       dired             ; builtin file tree
+       electric          ; bracets closer kinda
+       undo              ; undo tree kinda
+       vc                ; git integration
 
        :term
        ;; eshell
-       ;; shell           ; встроенный shell
-       vterm             ; полноценный терминал (если нужен)
+       ;; shell          ; builtin shell
+       vterm             ; terminal
 
        :checkers
-       syntax            ; базовая проверка синтаксиса (flycheck)
-       ;; (spell +flyspell) ; раскомментируй, если нужна проверка орфографии
+       syntax            ; syntax check (flycheck)
+       (spell +flyspell) ; spellcheck
 
        :tools
        ;; ansible
@@ -69,11 +68,11 @@
        ;; editorconfig
        ;; ein
        ;; eval
-       ;; lookup          ; поиск определений (если вдруг понадобится)
-       magit             ; лучший git-клиент (аналог gitsigns + lazygit)
+       ;; lookup         ; definition lookup (??)
+       magit             ; best (?) git client
        ;; make
        ;; pass
-       ;; pdf
+       pdf               ; pdf reader
        ;; prodigy
        ;; rgb
        ;; taskrunner
@@ -106,15 +105,15 @@
        ;; json
        ;; julia
        ;; kotlin
-       (markdown +grip)  ; отличная поддержка markdown для заметок
+       (markdown +grip)
+       (org
+        +roam2           ; obsidian.nvim alternative
+        +pomodoro        ; pomodoro
+        +journal)         ; daily journal
+       ;; +present)        ; presentations (?) org
        ;; nim
        ;; nix
        ;; ocaml
-       (org              ; === ГЛАВНЫЙ МОДУЛЬ ===
-        +roam2           ; аналог obsidian.nvim (сеть заметок)
-        +pomodoro        ; таймер помодоро
-        +journal         ; ежедневные заметки
-        +present)        ; презентации из org
        ;; php
        ;; purescript
        ;; python
@@ -129,7 +128,6 @@
        ;; scheme
        ;; sml
        ;; solidity
-       ;; (org +roam2)    ; дубликат, удали если есть
        ;; sh
        ;; zig
 
