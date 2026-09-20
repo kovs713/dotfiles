@@ -18,6 +18,9 @@
     '(doom-modeline-urgent          :foreground "#000000" :background "#00d7ff" :weight bold)
     '(doom-modeline-info            :foreground "#000000" :background "#707070" :weight bold)))
 
+(setq confirm-kill-emacs nil)
+(setq kill-emacs-query-functions nil)
+
 (when (and (not (display-graphic-p))
            (executable-find "wl-copy")
            (executable-find "wl-paste"))
@@ -154,7 +157,7 @@
 (map! :map org-mode-map :n "gf" #'org-open-at-point)
 (map! :map markdown-mode-map :n "gf" #'markdown-follow-thing-at-point)
 
-(map! :leader :desc "Toggle Diagnostics (Trouble)" "x x" #'+flycheck/error-list)
+(map! :leader :desc "Toggle Diagnostics (Trouble)" "t x" #'+flycheck/error-list)
 
 (map! :leader :desc "Toggle Flycheck" "l t" #'flycheck-mode)
 

@@ -1,4 +1,4 @@
-;; monochrome-theme.el --- A port of the monochrome theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; monochrome-theme.el --- A port of the monochrome theme -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Author: kovs713
 ;; Maintainer:
@@ -16,11 +16,11 @@
 
   ;; name        default   256       16
   ((bg         '("#000000" "black"   "black"        ))
-   (bg-alt     '("#191919" "#1c1c1c" "brightblack"  )) ; noise
-   (base0      '("#1c1c1c" "#1c1c1c" "black"        )) ; elevated
-   (base1      '("#303030" "#303030" "brightblack"  )) ; subtle
-   (base2      '("#3a3a3a" "#3a3a3a" "brightblack"  ))
-   (base3      '("#4a4a4a" "#4a4a4a" "brightblack"  ))
+   (bg-alt     '("#000000" "black"   "black"        ))
+   (base0      '("#000000" "black"   "black"        ))
+   (base1      '("#1c1c1c" "#1c1c1c" "brightblack"  ))
+   (base2      '("#303030" "#303030" "brightblack"  ))
+   (base3      '("#3a3a3a" "#3a3a3a" "brightblack"  ))
    (base4      '("#585858" "#585858" "brightblack"  ))
    (base5      '("#707070" "#707070" "brightblack"  )) ; muted
    (base6      '("#888888" "#888888" "brightblack"  ))
@@ -35,9 +35,9 @@
    (dark-red   '("#722529" "#722529" "red"          )) ; remove
    (orange     '("#ffaf00" "#ffaf00" "brightred"    )) ; warning
    (green      '("#416241" "#416241" "green"        )) ; add
-   (yellow     '("#707070" "#707070" "yellow"       )) ; muted grey (required by doom-themes)
-   (blue       '("#00d7ff" "#00d7ff" "brightblue"   )) ; search
-   (violet     '("#d70000" "#d70000" "magenta"      )) ; visual
+   (yellow     '("#707070" "#707070" "yellow"       )) ; muted grey
+   (blue       '("#707070" "#707070" "brightblue"   )) ; СЕРЫЙ! не синий
+   (violet     '("#d70000" "#d70000" "magenta"      )) ; visual / cursor
    (teal       '("#416241" "#416241" "brightgreen"  ))
    (dark-blue  '("#1d2b3a" "#1d2b3a" "blue"         )) ; change
    (magenta    '("#d70000" "#d70000" "magenta"      ))
@@ -45,7 +45,7 @@
    (dark-cyan  '("#1d2b3a" "#1d2b3a" "cyan"         ))
 
    ;; face categories -- required for all themes
-   (highlight      blue)
+   (highlight      base1)
    (vertical-bar   (doom-darken bg 0.25))
    (selection      base1)
    (builtin        fg)
@@ -93,22 +93,23 @@
    ((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
    
-   ;; Search
-   (isearch :foreground violet :background bg :inverse-video t)
+   ;; Search - ЕДИНСТВЕННОЕ место где используется синий (#00d7ff)
+   ;; Захардкожено напрямую, чтобы не зависеть от переменной blue
+   (isearch :foreground "#00d7ff" :background bg :inverse-video t)
    (isearch-fail :foreground red :background bg :inverse-video t)
-   (lazy-highlight :foreground blue :background bg :inverse-video t)
+   (lazy-highlight :foreground "#00d7ff" :background bg :inverse-video t)
    
-   ;; Mode-line
+   ;; Mode-line - без синего
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box nil)
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box nil)
-   (mode-line-emphasis :foreground blue)
+   (mode-line-emphasis :foreground fg)
    
-   ;; Doom modeline
-   (doom-modeline-bar :background blue)
+   ;; Doom modeline - без синего
+   (doom-modeline-bar :background fg)
    
    ;; Visual / Region
    (region :background base0 :foreground violet)
@@ -152,6 +153,23 @@
    ;; Tooltips and floating windows
    (tooltip :background base0 :foreground fg)
    
+   ;; Иконки - принудительно убираем синий отовсюду
+   (all-the-icons-blue :foreground fg)
+   (all-the-icons-dblue :foreground fg)
+   (all-the-icons-cyan :foreground fg)
+   (all-the-icons-dcyan :foreground fg)
+   (nerd-icons-blue :foreground fg)
+   (nerd-icons-dblue :foreground fg)
+   (nerd-icons-cyan :foreground fg)
+   (nerd-icons-dcyan :foreground fg)
+   
+   ;; Dired - без синего
+   (dired-directory :foreground fg :weight 'bold)
+   (dired-header :foreground fg)
+   (dired-ignored :foreground base5)
+   (dired-marked :foreground red)
+   (dired-flagged :foreground red)
+   
    ;; Company / Corfu / Vertico / Ivy (Autocompletion & Search)
    (company-tooltip :background base0 :foreground fg)
    (company-tooltip-selection :background fg :foreground bg)
@@ -163,17 +181,21 @@
    
    (vertico-current :background base1 :foreground fg)
    (consult-file :foreground fg)
-   (consult-directory :foreground base5)
+   (consult-directory :foreground fg)
    (ivy-current-match :background base1 :foreground fg)
    
-   ;; Compilation / Quickfix
-   (compilation-info :foreground blue :weight 'bold)
+   ;; Marginalia - без синего
+   (marginalia-file-name :foreground fg)
+   (marginalia-file-priv-dir :foreground fg)
+   (marginalia-file-priv-read :foreground fg)
+   (marginalia-file-priv-write :foreground fg)
+   (marginalia-file-priv-exec :foreground fg)
+   
+   ;; Compilation / Quickfix - без синего
+   (compilation-info :foreground fg :weight 'bold)
    (compilation-error :foreground red :weight 'bold)
    (compilation-warning :foreground orange :weight 'bold)
-   (next-error :foreground blue :inverse-video t)
-   
-   ;; Dired (Oil equivalent)
-   (dired-directory :foreground fg :weight 'bold)
+   (next-error :foreground fg :inverse-video t)
    
    ;; Outline
    ((outline-1 &override) :foreground fg :weight 'ultra-bold)
